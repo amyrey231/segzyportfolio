@@ -13,7 +13,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
 <!-- AOS animation library -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
 <script crossorigin="anonymous" defer="" src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
@@ -766,8 +766,28 @@ body:not(.light-mode) .certificate-card p {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
 }
+
+
+/* Reduce vertical spacing to shorten scroll length */
+section {
+  padding: 40px 15px;
+}
+#services .service-cards,
+.blog-grid,
+.portfolio-grid,
+.testimonial-grid,
+.team-container,
+.certificates-grid {
+  gap: 15px;
+}
+.skill-bar {
+  height: 8px;
+}
+.contact-form {
+  gap: 10px;
+}
 </style>
-</link></head>
+</head>
 <body>
 <header>
 <div class="container">
