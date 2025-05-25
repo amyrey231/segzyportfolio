@@ -1,31 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Johnson | Full Stack Developer Portfolio</title>
-  
-  <meta name="description" content="Full Stack Web & Blockchain Developer portfolio of Johnson Oluwasegun. Explore my work, blog, and contact details.">
-<meta name="keywords" content="Full Stack Developer, Blockchain, React, Node.js, Solidity, Web3, Portfolio">
-<meta name="author" content="Johnson Oluwasegun">
-
-  
-
-  <link rel="icon" href="https://cdn.vectorstock.com/i/500p/28/50/ethereum-logo-with-light-rays-vector-36952850.jpg" type="image/x-icon">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Johnson | Full Stack Developer Portfolio</title>
+<meta content="Full Stack Web &amp; Blockchain Developer portfolio of Johnson Oluwasegun. Explore my work, blog, and contact details." name="description"/>
+<meta content="Full Stack Developer, Blockchain, React, Node.js, Solidity, Web3, Portfolio" name="keywords"/>
+<meta content="Johnson Oluwasegun" name="author"/>
+<link href="https://cdn.vectorstock.com/i/500p/28/50/ethereum-logo-with-light-rays-vector-36952850.jpg" rel="icon" type="image/x-icon"/>
 <!-- Swiper CSS -->
-
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet" />
-
-  <!-- AOS animation library -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Font Awesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
-
-  <style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto&amp;display=swap" rel="stylesheet">
+<!-- AOS animation library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- Font Awesome for icons -->
+<script crossorigin="anonymous" defer="" src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
     /* Root colors and fonts */
     :root {
       --primary-color: #007bff;
@@ -751,313 +742,297 @@ body:not(.light-mode) .certificate-card p {
         
       }
     }
-  </style>
-</head>
+  
+
+@media (max-width: 1024px) {
+  .blog-grid, .portfolio-grid, .testimonial-grid, .team-container, .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .blog-grid, .portfolio-grid, .testimonial-grid, .team-container, .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</link></head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">Johnson</div>
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#statistics">Stats</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button id="modeToggle" aria-label="Toggle dark and light mode" title="Toggle dark/light mode">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
-  </header>
-
-  <section id="hero" role="banner" aria-label="Introduction">
-    <div class="content" data-aos="fade-up" data-aos-duration="1500">
-      <h1>Hello, I'm Johnson Oluwasegun</h1>
-      <div id="typed" aria-live="polite" aria-atomic="true"></div>
-      <p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
-    </div>
-  </section>
-
-  <section id="about" aria-label="About Me">
-    <div class="container" data-aos="fade-right" data-aos-duration="1500">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat.
+<header>
+<div class="container">
+<div class="logo">Johnson</div>
+<nav>
+<ul id="nav-menu">
+<li><a class="active" href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#statistics">Stats</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<button aria-label="Toggle dark and light mode" id="modeToggle" title="Toggle dark/light mode">
+<i class="fas fa-moon"></i>
+</button>
+</div>
+</header>
+<section aria-label="Introduction" id="hero" role="banner">
+<div class="content" data-aos="fade-up" data-aos-duration="1500">
+<h1>Hello, I'm Johnson Oluwasegun</h1>
+<div aria-atomic="true" aria-live="polite" id="typed"></div>
+<p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
+</div>
+</section>
+<section aria-label="About Me" id="about">
+<div class="container" data-aos="fade-right" data-aos-duration="1500">
+<div class="about-text">
+<h2>About Me</h2>
+<p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat.
 
             With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications. I take pride in writing clean, maintainable code and aligning technical execution with business goals. My approach is detail-oriented, efficient, and always focused on delivering real value through innovative and reliable solutions.</p>
-      </div>
-
-      <a href="Segzy CV.pdf" download class="btn-download-cv">Download CV</a>
-
-
-      <div class="about-img">
-        <img src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg" alt="Your portrait photo" />
-      </div>
-    </div>
-  </section>
-
-  <section id="services" aria-label="Services">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Services</h2>
-    <div class="service-cards container">
-      <article class="service-card" tabindex="0" aria-describedby="service1-desc" data-aos="zoom-in" data-aos-duration="1200">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p id="service1-desc">Building modern, responsive websites with HTML, CSS, JavaScript, and frameworks like React, Node.Js and Next.js.</p>
-      </article>
-      <article class="service-card" tabindex="0" aria-describedby="service2-desc" data-aos="zoom-in" data-aos-duration="1400">
-        <i class="fas fa-cubes"></i>
-        <h3>Blockchain Development</h3>
-        <p id="service2-desc">Smart contract development, DApp integration, and blockchain consulting using Solidity and Web3.js.</p>
-      </article>
-      <article class="service-card" tabindex="0" aria-describedby="service3-desc" data-aos="zoom-in" data-aos-duration="1600">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Mobile Friendly Apps</h3>
-        <p id="service3-desc">Creating mobile-optimized web apps with smooth performance and user-friendly interfaces.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="skills" aria-label="Skills & Tools">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Skills</h2>
-    <div class="skills-container container" data-aos="fade-up" data-aos-duration="1800">
-      <div class="skill">
-        <span>Solidity</span>
-        <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
-      </div>
-      <div class="skill">
-        <span>React.js</span>
-        <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Node.js</span>
-        <div class="skill-bar"><div class="fill" data-width="80%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Next.js</span>
-        <div class="skill-bar"><div class="fill" data-width="75%"></div></div>
-      </div>
-      <div class="skill">
-        <span>Web3.js / Ethers.js</span>
-        <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certificates" aria-label="Certificates">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Certificates</h2>
-    <div class="certificates-grid container" data-aos="fade-up" data-aos-duration="1800">
-      <div class="certificate-card">
-        <img src="https://img.freepik.com/free-vector/certificate-concept-illustration_114360-5843.jpg" alt="Solidity Developer Certificate">
-        <h4>Blockchain Developer – Solidity</h4>
-        <p>Issued by Coursera – 2024</p>
-      </div>
-      <div class="certificate-card">
-        <img src="https://img.freepik.com/free-vector/online-certification-illustration_23-2148573639.jpg" alt="React Developer Certificate">
-        <h4>React Developer</h4>
-        <p>Issued by Meta – 2023</p>
-      </div>
-      <div class="certificate-card">
-        <img src="https://img.freepik.com/premium-vector/certificate-achievement-template_62391-308.jpg" alt="Smart Contract Auditing">
-        <h4>Smart Contract Security</h4>
-        <p>Issued by Alchemy University – 2024</p>
-      </div>
-    </div>
-  </section>
-  
-
-  <section id="statistics" aria-label="Statistics and Achievements">
-    <h2 data-aos="fade-up" data-aos-duration="1500">My Stats</h2>
-    <div class="container">
-      <div class="stat-card" data-aos="fade-up" data-aos-duration="1000">
-        <div class="stat-number" data-target="342">0</div>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-duration="1200">
-        <div class="stat-number" data-target="97">0</div>
-        <div class="stat-label">Satisfied Clients</div>
-      </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-duration="1400">
-        <div class="stat-number" data-target="5">0</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-card" data-aos="fade-up" data-aos-duration="1600">
-        <div class="stat-number" data-target="3">0</div>
-        <div class="stat-label">Awards</div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section id="team" aria-label="Our Team">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Our Team</h2>
-    <div class="team-container container">
-      <article class="team-member" data-aos="zoom-in" data-aos-duration="1000">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe - Full Stack Developer">
-        <h3>John Doe</h3>
-        <p>Full Stack Web Developer</p>
-        <div class="team-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-      </article>
-      <article class="team-member" data-aos="zoom-in" data-aos-duration="1200">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jane Smith - UI/UX Designer">
-        <h3>Jane Smith</h3>
-        <p>UI/UX Designer</p>
-        <div class="team-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-dribbble"></i></a>
-        </div>
-      </article>
-      <article class="team-member" data-aos="zoom-in" data-aos-duration="1400">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rodriguez - Blockchain Engineer">
-        <h3>Carlos Rodriguez</h3>
-        <p>Blockchain Engineer</p>
-        <div class="team-socials">
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-      </article>
-    </div>
-  </section>
-  
-
-  <section id="trusted" aria-label="Trusted by Companies">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Trusted by Companies</h2>
-    <div class="trusted-logos container" data-aos="fade-up" data-aos-duration="1800">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png" alt="Fiverr" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png" alt="LogoTV" />
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&s" alt="IBM" />
-      <img src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg" alt="Google" />
-    
-    </div>
-  </section>
-  
-  <section id="testimonials" aria-label="Client Testimonials">
-    <h2 data-aos="fade-up" data-aos-duration="1500">What Clients Say</h2>
-    <div class="testimonial-grid container" data-aos="fade-up" data-aos-duration="1800">
-      <div class="testimonial-card">
-        <p>"Working with you was fantastic — the project was delivered ahead of schedule and exceeded expectations!"</p>
-        <h4>- Ethan Reynold</h4>
-        <span>CEO, Amazon Boost</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"Your blockchain knowledge is unmatched. You brought our decentralized platform to life."</p>
-        <h4>- Mic</h4>
-        <span>Owner, OG safuu</span>
-      </div>
-      <div class="testimonial-card">
-        <p>"The mobile app you created was sleek, fast, and incredibly user-friendly. 10/10!"</p>
-        <h4>- Aisha Rahman</h4>
-        <span>Founder, QuickTask</span>
-      </div>
-    </div>
-  </section>
-  
-
-  <section id="portfolio" aria-label="Portfolio Projects">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Portfolio</h2>
-    <div class="filter-buttons" role="list" aria-label="Portfolio Filters">
-      <button class="filter-btn active" data-filter="all" role="listitem" aria-pressed="true">All</button>
-      <button class="filter-btn" data-filter="web" role="listitem" aria-pressed="false">Web</button>
-      <button class="filter-btn" data-filter="blockchain" role="listitem" aria-pressed="false">Blockchain</button>
-      <button class="filter-btn" data-filter="mobile" role="listitem" aria-pressed="false">Mobile</button>
-    </div>
-
-    <div class="portfolio-grid container">
-      <article class="portfolio-item" data-category="web" tabindex="0" aria-label="Project: Portfolio Website" data-aos="fade-up" data-aos-duration="1000">
-        <img src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp" alt="Screenshot of Portfolio Website" />
-        <div class="portfolio-content">
-          <h3>Portfolio Website</h3>
-          <p>Responsive portfolio website built with React and CSS animations.</p>
-        </div>
-      </article>
-      <article class="portfolio-item" data-category="blockchain" tabindex="0" aria-label="Project: Decentralized Voting DApp" data-aos="fade-up" data-aos-duration="1200">
-        <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png" alt="Screenshot of Decentralized Voting DApp" />
-        <div class="portfolio-content">
-          <h3>Voting DApp</h3>
-          <p>Smart contract-based voting application using Solidity and Web3.js.</p>
-        </div>
-      </article>
-      <article class="portfolio-item" data-category="mobile" tabindex="0" aria-label="Project: Mobile ToDo App" data-aos="fade-up" data-aos-duration="1400">
-        <img src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png" alt="Screenshot of Mobile ToDo App" />
-        <div class="portfolio-content">
-          <h3>DeFi Platform</h3>
-          <p>DeFi DApp with smart contracts and liquidity pools that let users instantly exchange tokens, stake, farm </p>
-        </div>
-      </article>
-      <article class="portfolio-item" data-category="web" tabindex="0" aria-label="Project: E-Commerce Site" data-aos="fade-up" data-aos-duration="1600">
-        <img src="https://themefisher.com/blog/flatastic.webp" alt="Screenshot of E-Commerce Site" />
-        <div class="portfolio-content">
-          <h3>E-Commerce Site</h3>
-          <p>Online store built with Next.js, Node.js backend, and Stripe payments.</p>
-        </div>
-      </article>
-      <article class="portfolio-item" data-category="blockchain" tabindex="0" aria-label="Project: NFT Marketplace" data-aos="fade-up" data-aos-duration="1800">
-        <img src="https://cdn.dribbble.com/userupload/35209642/file/original-4b3c8f0e10bfd97795f46d7790b63a3e.png?format=webp&resize=400x300&vertical=center" alt="Screenshot of NFT Marketplace" />
-        <div class="portfolio-content">
-          <h3>NFT Marketplace</h3>
-          <p>Marketplace for minting and trading NFTs using Ethereum blockchain.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="blog" aria-label="Latest Blog Posts">
-    <h2 data-aos="fade-up" data-aos-duration="1500">Latest Articles</h2>
-    <div class="blog-grid container" data-aos="fade-up" data-aos-duration="1800">
-      <article class="blog-card">
-        <img src="https://talent500.com/blog/wp-content/uploads/sites/42/2024/05/react-must-be-in-scope-when-using-jsx-scaled-1.jpg" alt="Blog post 1">
-        <div class="blog-content">
-          <h3>Mastering React Performance</h3>
-          <p>Learn how to optimize your React apps with memoization, lazy loading, and more.</p>
-          <a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer">Read More →</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4D12AQG4KLFQnf0qjA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1661102421998?e=2147483647&v=beta&t=LPKr9YrokzJ69_rnf14sso0EYaYH4Cu3V-5Sh0BQbn8" alt="Blog post 2">
-        <div class="blog-content">
-          <h3>Intro to Solidity for Developers</h3>
-          <p>Dive into the fundamentals of smart contract development on Ethereum.</p>
-          <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer">Read More →</a>
-        </div>
-      </article>
-      <article class="blog-card">
-        <img src="https://wpdean.com/wp-content/uploads/2024/05/tailwind-css.jpg" alt="Blog post 3">
-        <div class="blog-content">
-          <h3>Design Systems in Front-End</h3>
-          <p>Build scalable and consistent UI with design systems using Tailwind & CSS variables.</p>
-          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Read More →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-
-  <form action="https://formspree.io/f/mblovggn"  method="POST" class="contact-form" data-aos="fade-up" data-aos-duration="1700">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-  
-
-  <footer>
-    &copy; 2025 Johnson Oluwasegun. All rights reserved.
+</div>
+<a class="btn-download-cv" download="" href="Segzy CV.pdf">Download CV</a>
+<div class="about-img">
+<img alt="Your portrait photo" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/>
+</div>
+</div>
+</section>
+<section aria-label="Services" id="services">
+<h2 data-aos="fade-up" data-aos-duration="1500">Services</h2>
+<div class="service-cards container">
+<article aria-describedby="service1-desc" class="service-card" data-aos="zoom-in" data-aos-duration="1200" tabindex="0">
+<i class="fas fa-code"></i>
+<h3>Web Development</h3>
+<p id="service1-desc">Building modern, responsive websites with HTML, CSS, JavaScript, and frameworks like React, Node.Js and Next.js.</p>
+</article>
+<article aria-describedby="service2-desc" class="service-card" data-aos="zoom-in" data-aos-duration="1400" tabindex="0">
+<i class="fas fa-cubes"></i>
+<h3>Blockchain Development</h3>
+<p id="service2-desc">Smart contract development, DApp integration, and blockchain consulting using Solidity and Web3.js.</p>
+</article>
+<article aria-describedby="service3-desc" class="service-card" data-aos="zoom-in" data-aos-duration="1600" tabindex="0">
+<i class="fas fa-mobile-alt"></i>
+<h3>Mobile Friendly Apps</h3>
+<p id="service3-desc">Creating mobile-optimized web apps with smooth performance and user-friendly interfaces.</p>
+</article>
+</div>
+</section>
+<section aria-label="Skills &amp; Tools" id="skills">
+<h2 data-aos="fade-up" data-aos-duration="1500">Skills</h2>
+<div class="skills-container container" data-aos="fade-up" data-aos-duration="1800">
+<div class="skill">
+<span>Solidity</span>
+<div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+</div>
+<div class="skill">
+<span>React.js</span>
+<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+</div>
+<div class="skill">
+<span>Node.js</span>
+<div class="skill-bar"><div class="fill" data-width="80%"></div></div>
+</div>
+<div class="skill">
+<span>Next.js</span>
+<div class="skill-bar"><div class="fill" data-width="75%"></div></div>
+</div>
+<div class="skill">
+<span>Web3.js / Ethers.js</span>
+<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+</div>
+</div>
+</section>
+<section aria-label="Certificates" id="certificates">
+<h2 data-aos="fade-up" data-aos-duration="1500">Certificates</h2>
+<div class="certificates-grid container" data-aos="fade-up" data-aos-duration="1800">
+<div class="certificate-card">
+<img alt="Solidity Developer Certificate" src="https://img.freepik.com/free-vector/certificate-concept-illustration_114360-5843.jpg"/>
+<h4>Blockchain Developer – Solidity</h4>
+<p>Issued by Coursera – 2024</p>
+</div>
+<div class="certificate-card">
+<img alt="React Developer Certificate" src="https://img.freepik.com/free-vector/online-certification-illustration_23-2148573639.jpg"/>
+<h4>React Developer</h4>
+<p>Issued by Meta – 2023</p>
+</div>
+<div class="certificate-card">
+<img alt="Smart Contract Auditing" src="https://img.freepik.com/premium-vector/certificate-achievement-template_62391-308.jpg"/>
+<h4>Smart Contract Security</h4>
+<p>Issued by Alchemy University – 2024</p>
+</div>
+</div>
+</section>
+<section aria-label="Statistics and Achievements" id="statistics">
+<h2 data-aos="fade-up" data-aos-duration="1500">My Stats</h2>
+<div class="container">
+<div class="stat-card" data-aos="fade-up" data-aos-duration="1000">
+<div class="stat-number" data-target="342">0</div>
+<div class="stat-label">Projects Completed</div>
+</div>
+<div class="stat-card" data-aos="fade-up" data-aos-duration="1200">
+<div class="stat-number" data-target="97">0</div>
+<div class="stat-label">Satisfied Clients</div>
+</div>
+<div class="stat-card" data-aos="fade-up" data-aos-duration="1400">
+<div class="stat-number" data-target="5">0</div>
+<div class="stat-label">Years Experience</div>
+</div>
+<div class="stat-card" data-aos="fade-up" data-aos-duration="1600">
+<div class="stat-number" data-target="3">0</div>
+<div class="stat-label">Awards</div>
+</div>
+</div>
+</section>
+<section aria-label="Our Team" id="team">
+<h2 data-aos="fade-up" data-aos-duration="1500">Our Team</h2>
+<div class="team-container container">
+<article class="team-member" data-aos="zoom-in" data-aos-duration="1000">
+<img alt="John Doe - Full Stack Developer" src="https://randomuser.me/api/portraits/men/32.jpg"/>
+<h3>John Doe</h3>
+<p>Full Stack Web Developer</p>
+<div class="team-socials">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+</article>
+<article class="team-member" data-aos="zoom-in" data-aos-duration="1200">
+<img alt="Jane Smith - UI/UX Designer" src="https://randomuser.me/api/portraits/women/45.jpg"/>
+<h3>Jane Smith</h3>
+<p>UI/UX Designer</p>
+<div class="team-socials">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-dribbble"></i></a>
+</div>
+</article>
+<article class="team-member" data-aos="zoom-in" data-aos-duration="1400">
+<img alt="Carlos Rodriguez - Blockchain Engineer" src="https://randomuser.me/api/portraits/men/65.jpg"/>
+<h3>Carlos Rodriguez</h3>
+<p>Blockchain Engineer</p>
+<div class="team-socials">
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+</article>
+</div>
+</section>
+<section aria-label="Trusted by Companies" id="trusted">
+<h2 data-aos="fade-up" data-aos-duration="1500">Trusted by Companies</h2>
+<div class="trusted-logos container" data-aos="fade-up" data-aos-duration="1800">
+<img alt="Fiverr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png">
+<img alt="LogoTV" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png">
+<img alt="IBM" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&amp;s">
+<img alt="Google" src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg">
+</img></img></img></img></div>
+</section>
+<section aria-label="Client Testimonials" id="testimonials">
+<h2 data-aos="fade-up" data-aos-duration="1500">What Clients Say</h2>
+<div class="testimonial-grid container" data-aos="fade-up" data-aos-duration="1800">
+<div class="testimonial-card">
+<p>"Working with you was fantastic — the project was delivered ahead of schedule and exceeded expectations!"</p>
+<h4>- Ethan Reynold</h4>
+<span>CEO, Amazon Boost</span>
+</div>
+<div class="testimonial-card">
+<p>"Your blockchain knowledge is unmatched. You brought our decentralized platform to life."</p>
+<h4>- Mic</h4>
+<span>Owner, OG safuu</span>
+</div>
+<div class="testimonial-card">
+<p>"The mobile app you created was sleek, fast, and incredibly user-friendly. 10/10!"</p>
+<h4>- Aisha Rahman</h4>
+<span>Founder, QuickTask</span>
+</div>
+</div>
+</section>
+<section aria-label="Portfolio Projects" id="portfolio">
+<h2 data-aos="fade-up" data-aos-duration="1500">Portfolio</h2>
+<div aria-label="Portfolio Filters" class="filter-buttons" role="list">
+<button aria-pressed="true" class="filter-btn active" data-filter="all" role="listitem">All</button>
+<button aria-pressed="false" class="filter-btn" data-filter="web" role="listitem">Web</button>
+<button aria-pressed="false" class="filter-btn" data-filter="blockchain" role="listitem">Blockchain</button>
+<button aria-pressed="false" class="filter-btn" data-filter="mobile" role="listitem">Mobile</button>
+</div>
+<div class="portfolio-grid container">
+<article aria-label="Project: Portfolio Website" class="portfolio-item" data-aos="fade-up" data-aos-duration="1000" data-category="web" tabindex="0">
+<img alt="Screenshot of Portfolio Website" src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp">
+<div class="portfolio-content">
+<h3>Portfolio Website</h3>
+<p>Responsive portfolio website built with React and CSS animations.</p>
+</div>
+</img></article>
+<article aria-label="Project: Decentralized Voting DApp" class="portfolio-item" data-aos="fade-up" data-aos-duration="1200" data-category="blockchain" tabindex="0">
+<img alt="Screenshot of Decentralized Voting DApp" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png">
+<div class="portfolio-content">
+<h3>Voting DApp</h3>
+<p>Smart contract-based voting application using Solidity and Web3.js.</p>
+</div>
+</img></article>
+<article aria-label="Project: Mobile ToDo App" class="portfolio-item" data-aos="fade-up" data-aos-duration="1400" data-category="mobile" tabindex="0">
+<img alt="Screenshot of Mobile ToDo App" src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png"/>
+<div class="portfolio-content">
+<h3>DeFi Platform</h3>
+<p>DeFi DApp with smart contracts and liquidity pools that let users instantly exchange tokens, stake, farm </p>
+</div>
+</article>
+<article aria-label="Project: E-Commerce Site" class="portfolio-item" data-aos="fade-up" data-aos-duration="1600" data-category="web" tabindex="0">
+<img alt="Screenshot of E-Commerce Site" src="https://themefisher.com/blog/flatastic.webp"/>
+<div class="portfolio-content">
+<h3>E-Commerce Site</h3>
+<p>Online store built with Next.js, Node.js backend, and Stripe payments.</p>
+</div>
+</article>
+<article aria-label="Project: NFT Marketplace" class="portfolio-item" data-aos="fade-up" data-aos-duration="1800" data-category="blockchain" tabindex="0">
+<img alt="Screenshot of NFT Marketplace" src="https://cdn.dribbble.com/userupload/35209642/file/original-4b3c8f0e10bfd97795f46d7790b63a3e.png?format=webp&amp;resize=400x300&amp;vertical=center"/>
+<div class="portfolio-content">
+<h3>NFT Marketplace</h3>
+<p>Marketplace for minting and trading NFTs using Ethereum blockchain.</p>
+</div>
+</article>
+</div>
+</section>
+<section aria-label="Latest Blog Posts" id="blog">
+<h2 data-aos="fade-up" data-aos-duration="1500">Latest Articles</h2>
+<div class="blog-grid container" data-aos="fade-up" data-aos-duration="1800">
+<article class="blog-card">
+<img alt="Blog post 1" src="https://talent500.com/blog/wp-content/uploads/sites/42/2024/05/react-must-be-in-scope-when-using-jsx-scaled-1.jpg"/>
+<div class="blog-content">
+<h3>Mastering React Performance</h3>
+<p>Learn how to optimize your React apps with memoization, lazy loading, and more.</p>
+<a href="https://reactnative.dev/" rel="noopener noreferrer" target="_blank">Read More →</a>
+</div>
+</article>
+<article class="blog-card">
+<img alt="Blog post 2" src="https://media.licdn.com/dms/image/v2/D4D12AQG4KLFQnf0qjA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1661102421998?e=2147483647&amp;v=beta&amp;t=LPKr9YrokzJ69_rnf14sso0EYaYH4Cu3V-5Sh0BQbn8"/>
+<div class="blog-content">
+<h3>Intro to Solidity for Developers</h3>
+<p>Dive into the fundamentals of smart contract development on Ethereum.</p>
+<a href="https://soliditylang.org/" rel="noopener noreferrer" target="_blank">Read More →</a>
+</div>
+</article>
+<article class="blog-card">
+<img alt="Blog post 3" src="https://wpdean.com/wp-content/uploads/2024/05/tailwind-css.jpg"/>
+<div class="blog-content">
+<h3>Design Systems in Front-End</h3>
+<p>Build scalable and consistent UI with design systems using Tailwind &amp; CSS variables.</p>
+<a href="https://tailwindcss.com/" rel="noopener noreferrer" target="_blank">Read More →</a>
+</div>
+</article>
+</div>
+</section>
+<form action="https://formspree.io/f/mblovggn" class="contact-form" data-aos="fade-up" data-aos-duration="1700" method="POST">
+<input name="name" placeholder="Your Name" required="" type="text"/>
+<input name="email" placeholder="Your Email" required="" type="email"/>
+<textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
+<button type="submit">Send Message</button>
+</form>
+<footer>
+    © 2025 Johnson Oluwasegun. All rights reserved.
   </footer>
-
-  <button id="backToTop" aria-label="Back to top" title="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- AOS Library -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-  <script>
+<button aria-label="Back to top" id="backToTop" title="Back to top">
+<i class="fas fa-arrow-up"></i>
+</button>
+<!-- AOS Library -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize AOS animations
@@ -1216,8 +1191,6 @@ el.click();
 });
 </script>
 <!-- Swiper JS -->
-
-
 <script>
 let lastScrollTop = 0;
 let scrollDirection = 'down';
@@ -1252,5 +1225,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 </body> </html>
