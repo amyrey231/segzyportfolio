@@ -11,9 +11,9 @@
 <link href="https://cdn.vectorstock.com/i/500p/28/50/ethereum-logo-with-light-rays-vector-36952850.jpg" rel="icon" type="image/x-icon"/>
 <!-- Swiper CSS -->
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
 <!-- AOS animation library -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <!-- Font Awesome for icons -->
 <script crossorigin="anonymous" defer="" src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
@@ -754,6 +754,18 @@ body:not(.light-mode) .certificate-card p {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Condensed multi-column layout for mobile */
+.portfolio-grid,
+.blog-grid,
+.testimonial-grid,
+.team-container,
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
 </style>
 </link></head>
 <body>
@@ -917,11 +929,11 @@ body:not(.light-mode) .certificate-card p {
 <section aria-label="Trusted by Companies" id="trusted">
 <h2 data-aos="fade-up" data-aos-duration="1500">Trusted by Companies</h2>
 <div class="trusted-logos container" data-aos="fade-up" data-aos-duration="1800">
-<img alt="Fiverr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png">
-<img alt="LogoTV" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png">
-<img alt="IBM" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&amp;s">
-<img alt="Google" src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg">
-</img></img></img></img></div>
+<img alt="Fiverr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png"/>
+<img alt="LogoTV" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png"/>
+<img alt="IBM" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&amp;s"/>
+<img alt="Google" src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg"/>
+</div>
 </section>
 <section aria-label="Client Testimonials" id="testimonials">
 <h2 data-aos="fade-up" data-aos-duration="1500">What Clients Say</h2>
@@ -953,19 +965,19 @@ body:not(.light-mode) .certificate-card p {
 </div>
 <div class="portfolio-grid container">
 <article aria-label="Project: Portfolio Website" class="portfolio-item" data-aos="fade-up" data-aos-duration="1000" data-category="web" tabindex="0">
-<img alt="Screenshot of Portfolio Website" src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp">
+<img alt="Screenshot of Portfolio Website" src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp"/>
 <div class="portfolio-content">
 <h3>Portfolio Website</h3>
 <p>Responsive portfolio website built with React and CSS animations.</p>
 </div>
-</img></article>
+</article>
 <article aria-label="Project: Decentralized Voting DApp" class="portfolio-item" data-aos="fade-up" data-aos-duration="1200" data-category="blockchain" tabindex="0">
-<img alt="Screenshot of Decentralized Voting DApp" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png">
+<img alt="Screenshot of Decentralized Voting DApp" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png"/>
 <div class="portfolio-content">
 <h3>Voting DApp</h3>
 <p>Smart contract-based voting application using Solidity and Web3.js.</p>
 </div>
-</img></article>
+</article>
 <article aria-label="Project: Mobile ToDo App" class="portfolio-item" data-aos="fade-up" data-aos-duration="1400" data-category="mobile" tabindex="0">
 <img alt="Screenshot of Mobile ToDo App" src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png"/>
 <div class="portfolio-content">
