@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Johnson | Full Stack Developer Portfolio</title>
+  
+  <meta name="description" content="Full Stack Web & Blockchain Developer portfolio of Johnson Oluwasegun. Explore my work, blog, and contact details.">
+<meta name="keywords" content="Full Stack Developer, Blockchain, React, Node.js, Solidity, Web3, Portfolio">
+<meta name="author" content="Johnson Oluwasegun">
+
+  
+
+  <link rel="icon" href="https://cdn.vectorstock.com/i/500p/28/50/ethereum-logo-with-light-rays-vector-36952850.jpg" type="image/x-icon">
+
+<!-- Swiper CSS -->
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- AOS animation library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+
+  <style>
+    /* Root colors and fonts */
+    :root {
+      --primary-color: #007bff;
+      --bg-dark: #121212;
+      --bg-light: #f9f9f9;
+      --text-light: #f0f0f0;
+      --text-dark: #222;
+      --font-primary: 'Montserrat', sans-serif;
+      --font-secondary: 'Roboto', sans-serif;
+    }
+
+    /* Reset & base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-secondary);
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    button {
+      cursor: pointer;
+      font-family: var(--font-primary);
+    }
+
+    /* Dark/light mode */
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    body.light-mode a {
+      color: var(--primary-color);
+    }
+    body.light-mode a:hover {
+      color: #003d80;
+    }
+    body.light-mode header,
+    body.light-mode footer {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    body.light-mode .stat-card {
+      background: #cce5ff;
+      color: #003d80;
+      box-shadow: none;
+    }
+    body.light-mode .portfolio-item {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    body.light-mode nav ul li a {
+      color: var(--text-dark);
+    }
+    body.light-mode nav ul li a:hover,
+    body.light-mode nav ul li a.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* Header & Navbar */
+    header {
+      background: var(--bg-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      transition: background 0.3s;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--primary-color);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-light);
+      padding: 5px 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    #modeToggle {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      color: white;
+      position: relative;
+    }
+
+    /* Our Team Section */
+#team {
+  padding: 60px 20px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+}
+#team .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.team-member {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 15px;
+  width: 260px;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4);
+}
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+.team-member h3 {
+  margin: 10px 0 5px;
+  color: var(--primary-color);
+}
+.team-member p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+.team-socials {
+  margin-top: 10px;
+}
+.team-socials a {
+  margin: 0 8px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+.team-socials a:hover {
+  color: white;
+}
+
+/* Trusted by Companies Section */
+#trusted {
+  padding: 60px 20px;
+  background: #0d6efd22;
+  text-align: center;
+}
+.trusted-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+.trusted-logos img {
+  max-height: 50px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: filter 0.3s, transform 0.3s, opacity 0.3s;
+}
+.trusted-logos img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 60px 20px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.testimonial-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,123,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,123,255,0.4);
+}
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.testimonial-card h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
+/* Blog Section */
+#blog {
+  padding: 60px 20px;
+  background: #0d6efd22;
+  text-align: center;
+  color: var(--text-light);
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.blog-card {
+  background: var(--bg-dark);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,123,255,0.4);
+}
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.blog-content {
+  padding: 20px;
+  text-align: left;
+}
+.blog-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+.blog-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+.blog-content a {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+
+.btn-download-cv {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+.btn-download-cv:hover {
+  background: #0056b3;
+}
+
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+  font-size: 1rem;
+}
+.contact-form button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-form button:hover {
+  background: #0056b3;
+}
+
+#skills {
+  padding: 60px 20px;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+.skills-container {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.skill {
+  font-size: 1.1rem;
+}
+.skill-bar {
+  width: 100%;
+  background: #2b2b2b;
+  height: 12px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.skill-bar .fill {
+  height: 100%;
+  width: 0;
+  background: var(--primary-color);
+  border-radius: 50px;
+  transition: width 2s ease;
+}
+
+
+#certificates {
+  padding: 60px 20px;
+  background: #0d6efd22;
+  color: var(--text-dark);
+  text-align: center;
+}
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.certificate-card {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+.certificate-card:hover {
+  transform: translateY(-5px);
+}
+.certificate-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.certificate-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+.certificate-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+body:not(.light-mode) .certificate-card {
+  background: #1e1e1e;
+  color: white;
+}
+body:not(.light-mode) .certificate-card p {
+  color: #ccc;
+}
+
+
+    #hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    #hero .content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+    #hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+    #typed {
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 2rem;
+      min-height: 50px;
+      height: 50px;
+    }
+    #hero p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Section Titles */
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+
+    /* About Section */
+    #about {
+      padding: 60px 20px;
+      background: var(--bg-dark);
+    }
+    #about .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    #about .about-text {
+      flex: 1 1 400px;
+    }
+    #about .about-text p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    #about .about-img {
+      flex: 1 1 400px;
+    }
+    #about .about-img img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    }
+
+    /* Services Section */
+    #services {
+      padding: 60px 20px;
+      background: #0d6efd22;
+    }
+    #services .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .service-card {
+      background: var(--bg-dark);
+      padding: 25px;
+      border-radius: 15px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgb(0 123 255 / 0.3);
+      transition: background-color 0.3s ease;
+      color: var(--text-light);
+      outline: none;
+    }
+    .service-card:hover,
+    .service-card:focus {
+      background: var(--primary-color);
+      color: white;
+      cursor: default;
+    }
+    .service-card i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      transition: color 0.3s ease;
+    }
+    .service-card:hover i,
+    .service-card:focus i {
+      color: white;
+    }
+    .service-card h3 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.95rem;
+    }
+
+    /* Statistics Section */
+    #statistics {
+      background: var(--bg-dark);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    #statistics .stat-card {
+      background: var(--primary-color);
+      padding: 30px 20px;
+      margin: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+      display: inline-block;
+      width: 180px;
+    }
+    #statistics .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    #statistics .stat-label {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      padding: 60px 20px;
+      background: #0d6efd22;
+      text-align: center;
+    }
+    #portfolio .filter-buttons {
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    #portfolio .filter-buttons button {
+      border: none;
+      background: var(--primary-color);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #portfolio .filter-buttons button.active,
+    #portfolio .filter-buttons button:hover {
+      background: #0056b3;
+    }
+    #portfolio .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .portfolio-item {
+      background: var(--bg-dark);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,123,255,0.8);
+    }
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+      height: 180px;
+      object-fit: cover;
+    }
+    .portfolio-item .portfolio-content {
+      padding: 15px 20px;
+      text-align: left;
+    }
+    .portfolio-item h3 {
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+    .portfolio-item p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: var(--text-light);
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 20px;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+    }
+    #contact p {
+      max-width: 600px;
+      margin: 0 auto 1rem auto;
+      font-size: 1.1rem;
+    }
+    #contact a {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      padding: 20px 0;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 6px 15px rgba(0,123,255,0.7);
+      z-index: 999;
+      transition: opacity 0.3s;
+    }
+    #backToTop:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      #about .container {
+        flex-direction: column;
+      }
+      #about .about-text,
+      #about .about-img {
+        flex: 1 1 100%;
+
+        
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Johnson</div>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#statistics">Stats</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="modeToggle" aria-label="Toggle dark and light mode" title="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <section id="hero" role="banner" aria-label="Introduction">
+    <div class="content" data-aos="fade-up" data-aos-duration="1500">
+      <h1>Hello, I'm Johnson Oluwasegun</h1>
+      <div id="typed" aria-live="polite" aria-atomic="true"></div>
+      <p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
+    </div>
+  </section>
+
+  <section id="about" aria-label="About Me">
+    <div class="container" data-aos="fade-right" data-aos-duration="1500">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat.
+
+            With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications. I take pride in writing clean, maintainable code and aligning technical execution with business goals. My approach is detail-oriented, efficient, and always focused on delivering real value through innovative and reliable solutions.</p>
+      </div>
+
+      <a href="Segzy CV.pdf" download class="btn-download-cv">Download CV</a>
+
+
+      <div class="about-img">
+        <img src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg" alt="Your portrait photo" />
+      </div>
+    </div>
+  </section>
+
+  <section id="services" aria-label="Services">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Services</h2>
+    <div class="service-cards container">
+      <article class="service-card" tabindex="0" aria-describedby="service1-desc" data-aos="zoom-in" data-aos-duration="1200">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p id="service1-desc">Building modern, responsive websites with HTML, CSS, JavaScript, and frameworks like React, Node.Js and Next.js.</p>
+      </article>
+      <article class="service-card" tabindex="0" aria-describedby="service2-desc" data-aos="zoom-in" data-aos-duration="1400">
+        <i class="fas fa-cubes"></i>
+        <h3>Blockchain Development</h3>
+        <p id="service2-desc">Smart contract development, DApp integration, and blockchain consulting using Solidity and Web3.js.</p>
+      </article>
+      <article class="service-card" tabindex="0" aria-describedby="service3-desc" data-aos="zoom-in" data-aos-duration="1600">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile Friendly Apps</h3>
+        <p id="service3-desc">Creating mobile-optimized web apps with smooth performance and user-friendly interfaces.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" aria-label="Skills & Tools">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Skills</h2>
+    <div class="skills-container container" data-aos="fade-up" data-aos-duration="1800">
+      <div class="skill">
+        <span>Solidity</span>
+        <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>React.js</span>
+        <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Node.js</span>
+        <div class="skill-bar"><div class="fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Next.js</span>
+        <div class="skill-bar"><div class="fill" data-width="75%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Web3.js / Ethers.js</span>
+        <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates" aria-label="Certificates">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Certificates</h2>
+    <div class="certificates-grid container" data-aos="fade-up" data-aos-duration="1800">
+      <div class="certificate-card">
+        <img src="https://img.freepik.com/free-vector/certificate-concept-illustration_114360-5843.jpg" alt="Solidity Developer Certificate">
+        <h4>Blockchain Developer – Solidity</h4>
+        <p>Issued by Coursera – 2024</p>
+      </div>
+      <div class="certificate-card">
+        <img src="https://img.freepik.com/free-vector/online-certification-illustration_23-2148573639.jpg" alt="React Developer Certificate">
+        <h4>React Developer</h4>
+        <p>Issued by Meta – 2023</p>
+      </div>
+      <div class="certificate-card">
+        <img src="https://img.freepik.com/premium-vector/certificate-achievement-template_62391-308.jpg" alt="Smart Contract Auditing">
+        <h4>Smart Contract Security</h4>
+        <p>Issued by Alchemy University – 2024</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="statistics" aria-label="Statistics and Achievements">
+    <h2 data-aos="fade-up" data-aos-duration="1500">My Stats</h2>
+    <div class="container">
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1000">
+        <div class="stat-number" data-target="342">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1200">
+        <div class="stat-number" data-target="97">0</div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1400">
+        <div class="stat-number" data-target="5">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-duration="1600">
+        <div class="stat-number" data-target="3">0</div>
+        <div class="stat-label">Awards</div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="team" aria-label="Our Team">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Our Team</h2>
+    <div class="team-container container">
+      <article class="team-member" data-aos="zoom-in" data-aos-duration="1000">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe - Full Stack Developer">
+        <h3>John Doe</h3>
+        <p>Full Stack Web Developer</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </article>
+      <article class="team-member" data-aos="zoom-in" data-aos-duration="1200">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jane Smith - UI/UX Designer">
+        <h3>Jane Smith</h3>
+        <p>UI/UX Designer</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </article>
+      <article class="team-member" data-aos="zoom-in" data-aos-duration="1400">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Carlos Rodriguez - Blockchain Engineer">
+        <h3>Carlos Rodriguez</h3>
+        <p>Blockchain Engineer</p>
+        <div class="team-socials">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+
+  <section id="trusted" aria-label="Trusted by Companies">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Trusted by Companies</h2>
+    <div class="trusted-logos container" data-aos="fade-up" data-aos-duration="1800">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png" alt="Fiverr" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png" alt="LogoTV" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&s" alt="IBM" />
+      <img src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg" alt="Google" />
+    
+    </div>
+  </section>
+  
+  <section id="testimonials" aria-label="Client Testimonials">
+    <h2 data-aos="fade-up" data-aos-duration="1500">What Clients Say</h2>
+    <div class="testimonial-grid container" data-aos="fade-up" data-aos-duration="1800">
+      <div class="testimonial-card">
+        <p>"Working with you was fantastic — the project was delivered ahead of schedule and exceeded expectations!"</p>
+        <h4>- Ethan Reynold</h4>
+        <span>CEO, Amazon Boost</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Your blockchain knowledge is unmatched. You brought our decentralized platform to life."</p>
+        <h4>- Mic</h4>
+        <span>Owner, OG safuu</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The mobile app you created was sleek, fast, and incredibly user-friendly. 10/10!"</p>
+        <h4>- Aisha Rahman</h4>
+        <span>Founder, QuickTask</span>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="portfolio" aria-label="Portfolio Projects">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Portfolio</h2>
+    <div class="filter-buttons" role="list" aria-label="Portfolio Filters">
+      <button class="filter-btn active" data-filter="all" role="listitem" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="web" role="listitem" aria-pressed="false">Web</button>
+      <button class="filter-btn" data-filter="blockchain" role="listitem" aria-pressed="false">Blockchain</button>
+      <button class="filter-btn" data-filter="mobile" role="listitem" aria-pressed="false">Mobile</button>
+    </div>
+
+    <div class="portfolio-grid container">
+      <article class="portfolio-item" data-category="web" tabindex="0" aria-label="Project: Portfolio Website" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp" alt="Screenshot of Portfolio Website" />
+        <div class="portfolio-content">
+          <h3>Portfolio Website</h3>
+          <p>Responsive portfolio website built with React and CSS animations.</p>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="blockchain" tabindex="0" aria-label="Project: Decentralized Voting DApp" data-aos="fade-up" data-aos-duration="1200">
+        <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png" alt="Screenshot of Decentralized Voting DApp" />
+        <div class="portfolio-content">
+          <h3>Voting DApp</h3>
+          <p>Smart contract-based voting application using Solidity and Web3.js.</p>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="mobile" tabindex="0" aria-label="Project: Mobile ToDo App" data-aos="fade-up" data-aos-duration="1400">
+        <img src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png" alt="Screenshot of Mobile ToDo App" />
+        <div class="portfolio-content">
+          <h3>DeFi Platform</h3>
+          <p>DeFi DApp with smart contracts and liquidity pools that let users instantly exchange tokens, stake, farm </p>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="web" tabindex="0" aria-label="Project: E-Commerce Site" data-aos="fade-up" data-aos-duration="1600">
+        <img src="https://themefisher.com/blog/flatastic.webp" alt="Screenshot of E-Commerce Site" />
+        <div class="portfolio-content">
+          <h3>E-Commerce Site</h3>
+          <p>Online store built with Next.js, Node.js backend, and Stripe payments.</p>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="blockchain" tabindex="0" aria-label="Project: NFT Marketplace" data-aos="fade-up" data-aos-duration="1800">
+        <img src="https://cdn.dribbble.com/userupload/35209642/file/original-4b3c8f0e10bfd97795f46d7790b63a3e.png?format=webp&resize=400x300&vertical=center" alt="Screenshot of NFT Marketplace" />
+        <div class="portfolio-content">
+          <h3>NFT Marketplace</h3>
+          <p>Marketplace for minting and trading NFTs using Ethereum blockchain.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="blog" aria-label="Latest Blog Posts">
+    <h2 data-aos="fade-up" data-aos-duration="1500">Latest Articles</h2>
+    <div class="blog-grid container" data-aos="fade-up" data-aos-duration="1800">
+      <article class="blog-card">
+        <img src="https://talent500.com/blog/wp-content/uploads/sites/42/2024/05/react-must-be-in-scope-when-using-jsx-scaled-1.jpg" alt="Blog post 1">
+        <div class="blog-content">
+          <h3>Mastering React Performance</h3>
+          <p>Learn how to optimize your React apps with memoization, lazy loading, and more.</p>
+          <a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer">Read More →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4D12AQG4KLFQnf0qjA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1661102421998?e=2147483647&v=beta&t=LPKr9YrokzJ69_rnf14sso0EYaYH4Cu3V-5Sh0BQbn8" alt="Blog post 2">
+        <div class="blog-content">
+          <h3>Intro to Solidity for Developers</h3>
+          <p>Dive into the fundamentals of smart contract development on Ethereum.</p>
+          <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer">Read More →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="https://wpdean.com/wp-content/uploads/2024/05/tailwind-css.jpg" alt="Blog post 3">
+        <div class="blog-content">
+          <h3>Design Systems in Front-End</h3>
+          <p>Build scalable and consistent UI with design systems using Tailwind & CSS variables.</p>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Read More →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <form action="https://formspree.io/f/mblovggn"  method="POST" class="contact-form" data-aos="fade-up" data-aos-duration="1700">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  
+
+  <footer>
+    &copy; 2025 Johnson Oluwasegun. All rights reserved.
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- AOS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize AOS animations
+      AOS.init({ once: true });
+
+      // Dark/Light Mode Toggle
+      const modeToggle = document.getElementById('modeToggle');
+      const body = document.body;
+      const modeIcon = modeToggle.querySelector('i');
+
+      // Load saved mode from localStorage
+      if(localStorage.getItem('mode') === 'light') {
+        body.classList.add('light-mode');
+        modeIcon.className = 'fas fa-sun';
+      }
+
+      modeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        if(body.classList.contains('light-mode')) {
+          modeIcon.className = 'fas fa-sun';
+          localStorage.setItem('mode', 'light');
+        } else {
+          modeIcon.className = 'fas fa-moon';
+          localStorage.setItem('mode', 'dark');
+        }
+      });
+
+      // Typed text animation in hero
+      const typedElement = document.getElementById('typed');
+      const typedStrings = ['Full Stack Web Developer', 'Blockchain Enthusiast', 'React & Node.js Expert', 'Contact me Today'];
+      let typedIndex = 0;
+      let charIndex = 0;
+      let typingDelay = 100;
+      let erasingDelay = 50;
+      let newTextDelay = 2000;
+
+      function type() {
+        if(charIndex < typedStrings[typedIndex].length) {
+          typedElement.textContent += typedStrings[typedIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if(charIndex > 0) {
+          typedElement.textContent = typedStrings[typedIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          typedIndex++;
+          if(typedIndex >= typedStrings.length) typedIndex = 0;
+          setTimeout(type, typingDelay + 500);
+        }
+      }
+
+      setTimeout(type, newTextDelay + 250);
+
+      // Portfolio filtering
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Update aria-pressed and active button styles
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+
+          const filter = button.getAttribute('data-filter');
+          portfolioItems.forEach(item => {
+            if(filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Stats counting animation
+      const stats = document.querySelectorAll('.stat-number');
+      let statsPlayed = false;
+
+      function countUp(el) {
+        const target = +el.getAttribute('data-target');
+        let count = 0;
+        const increment = target / 200; // 200 steps
+
+        function updateCount() {
+          count += increment;
+          if(count < target) {
+            el.textContent = Math.ceil(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = target;
+          }
+        }
+        updateCount();
+      }
+
+      function handleStats() {
+        const statsSection = document.getElementById('statistics');
+        const rect = statsSection.getBoundingClientRect();
+        if(!statsPlayed && rect.top < window.innerHeight && rect.bottom >= 0) {
+          stats.forEach(stat => countUp(stat));
+          statsPlayed = true;
+          window.removeEventListener('scroll', handleStats);
+        }
+      }
+      window.addEventListener('scroll', handleStats);
+      handleStats(); // Check on load in case already visible
+
+      // Back to top button
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if(window.pageYOffset > 300) {
+          backToTopBtn.style.display = 'block';
+        } else {
+          backToTopBtn.style.display = 'none';
+        }
+      });
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Animate skill bars on scroll
+function animateSkills() {
+  const skillsSection = document.getElementById("skills");
+  const rect = skillsSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom >= 0) {
+    document.querySelectorAll('.skill-bar .fill').forEach(bar => {
+      bar.style.width = bar.getAttribute('data-width');
+    });
+    window.removeEventListener('scroll', animateSkills);
+  }
+}
+window.addEventListener('scroll', animateSkills);
+animateSkills(); // trigger on load if already visible
+
+     
+// Keyboard accessibility: toggle via Enter/Space
+document.querySelectorAll('button, [tabindex]').forEach(el => {
+el.addEventListener('keydown', (e) => {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+el.click();
+}
+});
+});
+});
+</script>
+<!-- Swiper JS -->
+
+</body> </html>
