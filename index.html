@@ -11,7 +11,7 @@
 <link href="https://cdn.vectorstock.com/i/500p/28/50/ethereum-logo-with-light-rays-vector-36952850.jpg" rel="icon" type="image/x-icon"/>
 <!-- Swiper CSS -->
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Roboto&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=DM+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- AOS animation library -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
@@ -24,8 +24,8 @@
       --bg-light: #f9f9f9;
       --text-light: #f0f0f0;
       --text-dark: #222;
-      --font-primary: 'Montserrat', sans-serif;
-      --font-secondary: 'Roboto', sans-serif;
+      --font-primary: 'Inter', sans-serif;
+      --font-secondary: 'DM Sans', sans-serif;
     }
 
     /* Reset & base */
@@ -1356,12 +1356,49 @@ section {
     grid-template-columns: 1fr !important;
   }
 }
+
+.resume-section {
+  padding: 60px 20px;
+  background: #101010;
+  color: #f0f0f0;
+}
+.resume-section h2 {
+  font-size: 2rem;
+  color: #0d6efd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.resume-content {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.resume-content h3 {
+  margin-top: 20px;
+  color: #0d6efd;
+}
+.resume-content ul {
+  padding-left: 20px;
+}
+.resume-content li {
+  margin-bottom: 10px;
+}
+.btn-download-cv {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0d6efd;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 </style>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script></head>
 <body>
 <header>
-<div class="container">
-<div class="logo">Johnson</div>
+<div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+<div class="logo"><img alt="Personal Logo" src="https://cdn.solo.to/user/a/68331238e3a968_21877852.jpg" style="height: 48px; max-height: 10vh; margin-right: 12px; vertical-align: middle;"/></div>
 <nav>
 <ul id="nav-menu">
 <li><a class="active" href="#hero">Home</a></li>
@@ -1380,13 +1417,13 @@ section {
 <main>
 <section aria-label="Introduction" id="hero" role="banner"><div id="particles-js"></div>
 <div class="content" data-aos="fade-up" data-aos-duration="1500">
-<h1 id="hero-heading">Hello, I'm Johnson Oluwasegun</h1>
+<h1 id="hero-heading">Hello, I'm Segzy</h1>
 <div aria-atomic="true" aria-live="polite" id="typed"></div>
 <p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
 </div>
 </section>
 <section aria-label="About Me" id="about">
-<div class="about-content" data-aos="fade-right" data-aos-duration="1500"><div class="about-img"><img alt="Your portrait photo" loading="lazy" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/></div><div class="about-text"><h2 id="about-title">About Me</h2><p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat. With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications.</p><a class="btn-download-cv" download="" href="Segzy CV.pdf">Download CV</a></div></div>
+<div class="about-content" data-aos="fade-right" data-aos-duration="1500"><div class="about-img"><img alt="Your portrait photo" loading="lazy" src="https://cdn.solo.to/user/a/68331238e3a968_21877852.jpg"/></div><div class="about-text"><h2 id="about-title">About Me</h2><p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat. With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications.</p><a class="btn-download-cv" download="" href="Segzy CV.pdf">Download CV</a></div></div>
 </section>
 <section aria-label="Services" id="services">
 <h2 data-aos="fade-up" data-aos-duration="1500" id="services-title">Services</h2>
@@ -1410,28 +1447,7 @@ section {
 </section>
 <section aria-label="Skills &amp; Tools" id="skills">
 <h2 data-aos="fade-up" data-aos-duration="1500">Skills</h2>
-<div class="skills-container container" data-aos="fade-up" data-aos-duration="1800">
-<div class="skill">
-<span>Solidity</span>
-<div class="skill-bar"><div class="fill" data-width="90%"></div></div>
-</div>
-<div class="skill">
-<span>React.js</span>
-<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-</div>
-<div class="skill">
-<span>Node.js</span>
-<div class="skill-bar"><div class="fill" data-width="80%"></div></div>
-</div>
-<div class="skill">
-<span>Next.js</span>
-<div class="skill-bar"><div class="fill" data-width="75%"></div></div>
-</div>
-<div class="skill">
-<span>Web3.js / Ethers.js</span>
-<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-</div>
-</div>
+<div class="skills-container container" data-aos="fade-up" data-aos-duration="1800"><details><summary>Frontend Development</summary><div class="skill"><span>React.js</span><div class="skill-bar"><div class="fill" data-width="90%"></div></div></div><div class="skill"><span>Next.js</span><div class="skill-bar"><div class="fill" data-width="85%"></div></div></div><div class="skill"><span>HTML</span><div class="skill-bar"><div class="fill" data-width="95%"></div></div></div><div class="skill"><span>CSS</span><div class="skill-bar"><div class="fill" data-width="90%"></div></div></div><div class="skill"><span>JavaScript</span><div class="skill-bar"><div class="fill" data-width="92%"></div></div></div><div class="skill"><span>Frontend Development Experience</span><div class="skill-bar"><div class="fill" data-width="100%"></div></div></div></details><details><summary>Backend Development</summary><div class="skill"><span>Node.js</span><div class="skill-bar"><div class="fill" data-width="88%"></div></div></div><div class="skill"><span>Express.js</span><div class="skill-bar"><div class="fill" data-width="84%"></div></div></div><div class="skill"><span>MongoDB</span><div class="skill-bar"><div class="fill" data-width="82%"></div></div></div><div class="skill"><span>PostgreSQL</span><div class="skill-bar"><div class="fill" data-width="80%"></div></div></div><div class="skill"><span>Backend Development Experience</span><div class="skill-bar"><div class="fill" data-width="100%"></div></div></div></details><details><summary>Blockchain &amp; Smart Contract Development</summary><div class="skill"><span>Solidity</span><div class="skill-bar"><div class="fill" data-width="90%"></div></div></div><div class="skill"><span>Web3.js</span><div class="skill-bar"><div class="fill" data-width="85%"></div></div></div><div class="skill"><span>Ethers.js</span><div class="skill-bar"><div class="fill" data-width="84%"></div></div></div><div class="skill"><span>Hardhat</span><div class="skill-bar"><div class="fill" data-width="82%"></div></div></div><div class="skill"><span>Blockchain &amp; Smart Contract Development Experience</span><div class="skill-bar"><div class="fill" data-width="100%"></div></div></div></details></div>
 </section>
 <section aria-label="Certificates" id="certificates">
 <h2 data-aos="fade-up" data-aos-duration="1500">Certificates</h2>
@@ -1457,11 +1473,11 @@ section {
 <h2 data-aos="fade-up" data-aos-duration="1500">My Stats</h2>
 <div class="container">
 <div class="stat-card" data-aos="fade-up" data-aos-duration="1000">
-<div class="stat-number" data-target="342">0</div>
+<div class="stat-number" data-target="167">0</div>
 <div class="stat-label">Projects Completed</div>
 </div>
 <div class="stat-card" data-aos="fade-up" data-aos-duration="1200">
-<div class="stat-number" data-target="97">0</div>
+<div class="stat-number" data-target="51">0</div>
 <div class="stat-label">Satisfied Clients</div>
 </div>
 <div class="stat-card" data-aos="fade-up" data-aos-duration="1400">
@@ -1478,17 +1494,17 @@ section {
 <h2 data-aos="fade-up" data-aos-duration="1500">Our Team</h2>
 <div class="team-container container">
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1000">
-<img alt="John Doe - Full Stack Developer" loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-<h3>John Doe</h3>
-<p>Full Stack Web Developer</p>
+<img alt="John Doe - Full Stack Developer" loading="lazy" src="https://cdn.solo.to/user/a/68331238e3a968_21877852.jpg"/>
+<h3>Segzy</h3>
+<p>Head Dev / Full Stack Web Developer</p>
 <div class="team-socials">
 <a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-github"></i></a>
 </div>
 </article>
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1200">
-<img alt="Jane Smith - UI/UX Designer" loading="lazy" src="https://randomuser.me/api/portraits/women/45.jpg"/>
-<h3>Jane Smith</h3>
+<img alt="Jane Smith - UI/UX Designer" loading="lazy" src="https://api.dicebear.com/7.x/micah/svg?seed=Jamie"/>
+<h3>Amy</h3>
 <p>UI/UX Designer</p>
 <div class="team-socials">
 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -1496,7 +1512,7 @@ section {
 </div>
 </article>
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1400">
-<img alt="Carlos Rodriguez - Blockchain Engineer" loading="lazy" src="https://randomuser.me/api/portraits/men/65.jpg"/>
+<img alt="Carlos Rodriguez - Blockchain Engineer" loading="lazy" src="https://api.dicebear.com/7.x/micah/svg?seed=Taylor"/>
 <h3>Carlos Rodriguez</h3>
 <p>Blockchain Engineer</p>
 <div class="team-socials">
@@ -1519,21 +1535,42 @@ section {
 <h2 data-aos="fade-up" data-aos-duration="1500">What Clients Say</h2>
 <div class="testimonial-grid container" data-aos="fade-up" data-aos-duration="1800">
 <div class="testimonial-card">
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★★
+</div>
 <p>"Working with you was fantastic — the project was delivered ahead of schedule and exceeded expectations!"</p>
 <h4>- Ethan Reynold</h4>
 <span>CEO, Amazon Boost</span>
 </div>
 <div class="testimonial-card">
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★½
+</div>
 <p>"Your blockchain knowledge is unmatched. You brought our decentralized platform to life."</p>
 <h4>- Mic</h4>
 <span>Owner, OG safuu</span>
 </div>
 <div class="testimonial-card">
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★★
+</div>
 <p>"The mobile app you created was sleek, fast, and incredibly user-friendly. 10/10!"</p>
 <h4>- Aisha Rahman</h4>
-<span>Founder, QuickTask</span>
+<span></span>
 </div>
+<div class="testimonial-card"><p>"Incredible job on our dApp — seamless integration and beautiful UI."</p>
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★★
 </div>
+<h4>- Tolu Adebayo</h4><span>CTO, ChainBridge</span></div><div class="testimonial-card"><p>"Very knowledgeable and reliable. Great communicator throughout."</p>
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★½
+</div>
+<h4>- Nina Lopez</h4><span>Product Lead, MetaOne</span></div><div class="testimonial-card"><p>"I’ll definitely hire again for future blockchain projects. Solid work!"</p>
+<div class="star-rating" style="color: gold; font-size: 1.2rem; margin-bottom: 10px;">
+  ★★★★★
+</div>
+<h4>- Victor Wang</h4><span>CEO, Cryptify</span></div></div>
 </section>
 <section aria-label="Portfolio Projects" id="portfolio">
 <h2 data-aos="fade-up" data-aos-duration="1500">Portfolio</h2>
@@ -1611,6 +1648,42 @@ section {
 <button type="submit">Send Message</button>
 </form>
 </main>
+<section class="resume-section" id="resume">
+<h2>Resume</h2>
+<div class="resume-content">
+<p><strong>Name:</strong> Segzy</p>
+<p><strong>Title:</strong> Full Stack Developer</p>
+<p><strong>Summary:</strong> I am a dedicated Full Stack Web and Blockchain Developer with a strong foundation in building responsive, user-centric web applications and secure, decentralized blockchain solutions. I specialize in JavaScript, React, Node.js, Solidity, and smart contract development.</p>
+<h3>Experience</h3>
+<ul>
+<li>
+<strong>Freelance Full Stack Web Developer</strong> (2021 - Present)
+        <ul>
+<li>Designed and developed responsive websites using HTML, CSS, JavaScript, and React.</li>
+<li>Built RESTful APIs with Node.js and Express, and used MongoDB/PostgreSQL.</li>
+<li>Delivered full-stack apps and dashboards for businesses.</li>
+<li>Collaborated with clients for technical solutions and timely delivery.</li>
+</ul>
+</li>
+<li>
+<strong>Blockchain Developer | Smart Contracts &amp; dApps</strong> (2022 - Present)
+        <ul>
+<li>Developed and deployed smart contracts using Solidity (Ethereum, BNB Chain).</li>
+<li>Built dApps with Web3.js, Ethers.js and wallet integrations (MetaMask).</li>
+<li>Audited smart contracts for vulnerabilities.</li>
+<li>Provided consulting for token launches, NFT drops, and Web3 integrations.</li>
+</ul>
+</li>
+</ul>
+<h3>Education</h3>
+<p><strong>UNILAG</strong> — Bachelor in Computer Science (2017 - 2020)</p>
+<h3>Skills</h3>
+<p>Web Development, React.js &amp; Node.js, Blockchain Development, Smart Contracts, HTML, CSS, JavaScript, PHP, MongoDB, Solidity, Ethers.js, Hardhat</p>
+<h3>Languages</h3>
+<p>English, Yoruba</p>
+<a class="btn-download-cv" download="" href="Segzy CV.pdf">Download Full CV (PDF)</a>
+</div>
+</section>
 <footer id="footer-text">
     © 2025 Johnson Oluwasegun. All rights reserved.
   </footer>
@@ -1712,7 +1785,7 @@ section {
       function countUp(el) {
         const target = +el.getAttribute('data-target');
         let count = 0;
-        const increment = target / 200; // 200 steps
+        const increment = target / 80; // 200 steps
 
         function updateCount() {
           count += increment;
