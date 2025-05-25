@@ -902,7 +902,461 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   padding: 0 20px;
-}</style>
+}
+/* ======= MOBILE LAYOUT IMPROVEMENTS ======= */
+@media (max-width: 768px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .service-card,
+  .testimonial-card,
+  .portfolio-item,
+  .certificate-card,
+  .team-member,
+  .blog-card {
+    margin-bottom: 20px;
+  }
+
+  .about-img img {
+    margin-top: 30px;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #typed {
+    font-size: 1.2rem;
+  }
+
+  .skills-container {
+    padding: 0 10px;
+  }
+
+  .tech-icons {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .tech img {
+    width: 50px;
+    height: 50px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    background: var(--bg-dark);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .portfolio-grid,
+  .blog-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .skill-bar {
+    height: 10px;
+  }
+
+  .skill {
+    font-size: 1rem;
+  }
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+.about-img,
+.about-text {
+  flex: 1 1 400px;
+}
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    order: 2;
+  }
+  .about-img {
+    order: 1;
+  }
+}
+
+/* Enhanced Mobile Layout Improvements */
+@media (max-width: 768px) {
+  .about-content,
+  .service-cards,
+  .skills-container,
+  .portfolio-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid,
+  .trusted-logos,
+  .filter-buttons {
+    flex-direction: column !important;
+    display: flex !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-card,
+  .portfolio-item,
+  .certificate-card,
+  .testimonial-card,
+  .team-member {
+    width: 90% !important;
+    max-width: 400px;
+  }
+
+  .btn-download-cv {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #typed {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tech-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tech img {
+    width: 50px;
+    height: 50px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .stat-card {
+    width: 90% !important;
+    margin: 10px auto;
+  }
+}
+
+/* Enhanced Mobile Aesthetic Fixes */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .about-img img {
+    max-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .btn-download-cv {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .service-cards,
+  .portfolio-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .service-card,
+  .portfolio-item,
+  .certificate-card,
+  .testimonial-card,
+  .team-member {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .stat-card {
+    width: 80% !important;
+    margin: 15px auto;
+  }
+
+  .tech-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .tech img {
+    width: 50px;
+    height: 50px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+
+  .filter-buttons {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .filter-buttons button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+/* Grid Tweaks for Better Mobile Display */
+@media (max-width: 1024px) {
+  .service-cards,
+  .portfolio-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: 20px !important;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-cards,
+  .portfolio-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* FINAL MOBILE GRID FIX */
+.service-cards,
+.portfolio-grid,
+.testimonial-grid,
+.team-container,
+.certificates-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  justify-items: center;
+}
+
+@media (max-width: 480px) {
+  .service-cards,
+  .portfolio-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr)) !important;
+    padding: 0 10px;
+  }
+}
+
+/* Prevent individual cards from breaking the grid */
+.service-card,
+.portfolio-item,
+.certificate-card,
+.testimonial-card,
+.team-member {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+/* Force About section to be side-by-side even on mobile */
+.about-content {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-img, .about-text {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+@media (max-width: 480px) {
+  .about-img, .about-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* About Section - Clean Mobile Layout */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 20px;
+  text-align: center;
+}
+.about-img img {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+.about-text {
+  max-width: 600px;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Force 3-column layout for team, testimonials, certificates even on mobile */
+.team-container,
+.testimonial-grid,
+.certificates-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  justify-items: center;
+  padding: 0 15px;
+}
+
+.team-member,
+.testimonial-card,
+.certificate-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+  .team-container,
+  .testimonial-grid,
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .team-container,
+  .testimonial-grid,
+  .certificates-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* FINAL FORCE GRID FIX for team, testimonials, certificates */
+.team-container,
+.testimonial-grid,
+.certificates-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  padding: 0 10px !important;
+}
+
+.team-member,
+.testimonial-card,
+.certificate-card {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+}
+
+/* Reduce to 2 columns on tablets */
+@media (max-width: 768px) {
+  .team-container,
+  .testimonial-grid,
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Reduce to 1 column on very small screens */
+@media (max-width: 480px) {
+  .team-container,
+  .testimonial-grid,
+  .certificates-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script></head>
 <body>
 <header>
@@ -932,18 +1386,7 @@ section {
 </div>
 </section>
 <section aria-label="About Me" id="about">
-<div class="container" data-aos="fade-right" data-aos-duration="1500">
-<div class="about-text">
-<h2 id="about-title">About Me</h2>
-<p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat.
-
-            With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications. I take pride in writing clean, maintainable code and aligning technical execution with business goals. My approach is detail-oriented, efficient, and always focused on delivering real value through innovative and reliable solutions.</p>
-</div>
-<a class="btn-download-cv" download="" href="/assets/files/Segzy-CV.pdf">Download CV</a>
-<div class="about-img">
-<img alt="Your portrait photo" loading="lazy" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/>
-</div>
-</div>
+<div class="about-content" data-aos="fade-right" data-aos-duration="1500"><div class="about-img"><img alt="Your portrait photo" loading="lazy" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/></div><div class="about-text"><h2 id="about-title">About Me</h2><p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat. With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications.</p><a class="btn-download-cv" download="" href="Segzy CV.pdf">Download CV</a></div></div>
 </section>
 <section aria-label="Services" id="services">
 <h2 data-aos="fade-up" data-aos-duration="1500" id="services-title">Services</h2>
@@ -1137,14 +1580,6 @@ section {
 </div>
 </article>
 </div>
-</section>
-<section aria-label="Latest Blog Posts" id="blog">
-<h2 data-aos="fade-up" data-aos-duration="1500">Latest Articles</h2>
-
-<div class="blog-grid" id="blogGrid">
-<p>Loading blog posts...</p>
-</div>
-
 </section>
 <section id="tech-stack">
 <h2>Tech Stack</h2>
@@ -1409,66 +1844,4 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
-
-<script>
-async function loadLiveBlogPosts() {
-  const feedURLs = [
-    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/web3',
-    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/blockchain',
-    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/fullstack',
-    'https://api.rss2json.com/v1/api.json?rss_url=https://www.coindesk.com/arc/outboundfeeds/rss/'
-  ];
-
-  const fallbackImages = [
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*2UoJUkcJ2sXL-1dNis3VbA.png',
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*v7VK-waf4RUWfY2fH3-60g.png',
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*I-RdUNsGrDnhnbEZ7tLoGA.png',
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hTyuJFxmJaULcZ6XfVnNVg.jpeg',
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*kxAcmXrWPuGZBM-UakLwFw.png',
-    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*qkZUdF7hJUFt-b-Ggk-Taw.png'
-  ];
-
-  const blogGrid = document.getElementById('blogGrid');
-  if (!blogGrid) return;
-
-  try {
-    let allPosts = [];
-    for (const url of feedURLs) {
-      const res = await fetch(url);
-      const data = await res.json();
-      if (data.items) allPosts.push(...data.items);
-    }
-
-    const keywords = ['blockchain', 'web3', 'smart contract', 'ethereum', 'solidity', 'node', 'full stack', 'frontend', 'backend', 'react', 'javascript'];
-    const filtered = allPosts.filter(p =>
-      keywords.some(k => (p.title + p.description).toLowerCase().includes(k))
-    );
-
-    const uniquePosts = [...new Map(filtered.map(p => [p.link, p])).values()];
-    const selected = uniquePosts.sort(() => Math.random() - 0.5).slice(0, 6);
-
-    blogGrid.innerHTML = '';
-    selected.forEach((post, i) => {
-      let imgMatch = post.content?.match(/<img[^>]+src="([^">]+)"/i);
-      let imageUrl = post.thumbnail || (imgMatch && imgMatch[1]) || fallbackImages[i % fallbackImages.length];
-
-      const card = document.createElement('div');
-      card.className = 'blog-card';
-      card.innerHTML = `
-        <img src="${imageUrl}" alt="Blog thumbnail" loading="lazy" />
-        <h3>${post.title}</h3>
-        <p><strong>${new Date(post.pubDate).toDateString()}</strong></p>
-        <p>${post.description.replace(/<[^>]+>/g, '').slice(0, 100)}...</p>
-        <a href="${post.link}" target="_blank">Read More</a>
-      `;
-      blogGrid.appendChild(card);
-    });
-  } catch (err) {
-    blogGrid.innerHTML = '<p style="color:red;">Unable to load blog posts.</p>';
-    console.error(err);
-  }
-}
-document.addEventListener('DOMContentLoaded', loadLiveBlogPosts);
-</script>
 </body> </html>
-
