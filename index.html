@@ -1217,4 +1217,40 @@ el.click();
 </script>
 <!-- Swiper JS -->
 
+
+<script>
+let lastScrollTop = 0;
+let scrollDirection = 'down';
+window.addEventListener('scroll', function () {
+  const st = window.pageYOffset || document.documentElement.scrollTop;
+  scrollDirection = st > lastScrollTop ? 'down' : 'up';
+  lastScrollTop = st <= 0 ? 0 : st;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({ once: false, mirror: false, duration: 800 });
+  document.querySelectorAll('[data-aos]').forEach((el) => {
+    el.addEventListener('aos:in', () => {
+      el.setAttribute('data-aos', scrollDirection === 'down' ? 'zoom-out' : 'fade-in');
+      AOS.refreshHard();
+    });
+  });
+
+  const menuToggle = document.createElement('button');
+  menuToggle.id = 'menuToggle';
+  menuToggle.className = 'hamburger';
+  menuToggle.setAttribute('aria-label', 'Toggle menu');
+  menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
+  const header = document.querySelector('header .container');
+  const nav = document.getElementById('nav-menu')?.parentNode;
+  if (nav && header) header.insertBefore(menuToggle, nav);
+
+  const navMenu = document.getElementById('nav-menu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+});
+</script>
+
 </body> </html>
