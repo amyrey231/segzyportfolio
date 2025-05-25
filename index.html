@@ -29,10 +29,12 @@
     }
 
     /* Reset & base */
+img, video { max-width: 100%; height: auto; display: block; }
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
+  overflow-x: hidden;
       font-family: var(--font-secondary);
       background: var(--bg-dark);
       color: var(--text-light);
@@ -59,10 +61,12 @@
       color: var(--text-light);
     }
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
-    }
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
     button {
       cursor: pointer;
       font-family: var(--font-primary);
@@ -114,10 +118,14 @@
       transition: background 0.3s;
     }
     header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
@@ -125,6 +133,8 @@
       color: var(--primary-color);
     }
     nav ul {
+  flex-wrap: wrap;
+  justify-content: center;
       list-style: none;
       display: flex;
       gap: 25px;
@@ -290,12 +300,7 @@
   text-align: center;
   color: var(--text-light);
 }
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
+
 .blog-card {
   background: var(--bg-dark);
   border-radius: 15px;
@@ -463,7 +468,19 @@ body:not(.light-mode) .certificate-card p {
   color: #ccc;
 }
 
-
+@media (max-width: 768px) {
+  .portfolio-grid,
+  .blog-grid,
+  .testimonial-grid,
+  .team-container,
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
     #hero::after {
       content: "";
       position: absolute;
@@ -509,11 +526,12 @@ body:not(.light-mode) .certificate-card p {
       background: var(--bg-dark);
     }
     #about .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
     #about .about-text {
       flex: 1 1 400px;
     }
@@ -721,20 +739,33 @@ body:not(.light-mode) .certificate-card p {
       background: #0056b3;
     }
 
-    /* Responsive */
+    .show { display: block; }
+
+/* Responsive */
     @media(max-width: 768px) {
       header .container {
-        flex-direction: column;
-        gap: 10px;
-      }
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
       nav ul {
+  flex-wrap: wrap;
+  justify-content: center;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
       }
       #about .container {
-        flex-direction: column;
-      }
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
       #about .about-text,
       #about .about-img {
         flex: 1 1 100%;
@@ -770,6 +801,8 @@ body:not(.light-mode) .certificate-card p {
 
 /* Reduce vertical spacing to shorten scroll length */
 section {
+  padding-left: 5vw;
+  padding-right: 5vw;
   padding: 40px 15px;
 }
 #services .service-cards,
@@ -786,8 +819,91 @@ section {
 .contact-form {
   gap: 10px;
 }
-</style>
-</head>
+
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: 0;
+}
+#hero .content {
+  position: relative;
+  z-index: 1;
+}
+
+
+#tech-stack {
+  text-align: center;
+  padding: 60px 20px;
+}
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.tech img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+.tech:hover img {
+  transform: scale(1.1);
+}
+.tech {
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.blog-card h3 {
+  font-size: 1.1rem;
+  margin: 15px;
+}
+.blog-card p {
+  font-size: 0.95rem;
+  margin: 0 15px 15px 15px;
+  color: #444;
+}
+.blog-card a {
+  margin: 10px 15px 15px 15px;
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 0 20px;
+}</style>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script></head>
 <body>
 <header>
 <div class="container">
@@ -807,9 +923,10 @@ section {
 </button>
 </div>
 </header>
-<section aria-label="Introduction" id="hero" role="banner">
+<main>
+<section aria-label="Introduction" id="hero" role="banner"><div id="particles-js"></div>
 <div class="content" data-aos="fade-up" data-aos-duration="1500">
-<h1>Hello, I'm Johnson Oluwasegun</h1>
+<h1 id="hero-heading">Hello, I'm Johnson Oluwasegun</h1>
 <div aria-atomic="true" aria-live="polite" id="typed"></div>
 <p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
 </div>
@@ -817,19 +934,19 @@ section {
 <section aria-label="About Me" id="about">
 <div class="container" data-aos="fade-right" data-aos-duration="1500">
 <div class="about-text">
-<h2>About Me</h2>
+<h2 id="about-title">About Me</h2>
 <p>I’m a Full Stack Web and Blockchain Developer with a strong focus on creating secure, scalable, and high-performance digital solutions. I specialize in modern web technologies such as React, Next.js, Node.js, and Express, as well as blockchain development using Solidity, Web3.js, Ethers.js, and Hardhat.
 
             With experience across both frontend and backend systems, I build seamless user experiences and integrate smart contract functionality into decentralized applications. I take pride in writing clean, maintainable code and aligning technical execution with business goals. My approach is detail-oriented, efficient, and always focused on delivering real value through innovative and reliable solutions.</p>
 </div>
-<a class="btn-download-cv" download="" href="Segzy CV.pdf">Download CV</a>
+<a class="btn-download-cv" download="" href="/assets/files/Segzy-CV.pdf">Download CV</a>
 <div class="about-img">
-<img alt="Your portrait photo" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/>
+<img alt="Your portrait photo" loading="lazy" src="https://img.freepik.com/premium-photo/3d-cartoon-professional-freelancer-sitting-chair-with-desktop_971934-1595.jpg"/>
 </div>
 </div>
 </section>
 <section aria-label="Services" id="services">
-<h2 data-aos="fade-up" data-aos-duration="1500">Services</h2>
+<h2 data-aos="fade-up" data-aos-duration="1500" id="services-title">Services</h2>
 <div class="service-cards container">
 <article aria-describedby="service1-desc" class="service-card" data-aos="zoom-in" data-aos-duration="1200" tabindex="0">
 <i class="fas fa-code"></i>
@@ -877,17 +994,17 @@ section {
 <h2 data-aos="fade-up" data-aos-duration="1500">Certificates</h2>
 <div class="certificates-grid container" data-aos="fade-up" data-aos-duration="1800">
 <div class="certificate-card">
-<img alt="Solidity Developer Certificate" src="https://img.freepik.com/free-vector/certificate-concept-illustration_114360-5843.jpg"/>
+<img alt="Solidity Developer Certificate" loading="lazy" src="https://img.freepik.com/free-vector/certificate-concept-illustration_114360-5843.jpg"/>
 <h4>Blockchain Developer – Solidity</h4>
 <p>Issued by Coursera – 2024</p>
 </div>
 <div class="certificate-card">
-<img alt="React Developer Certificate" src="https://img.freepik.com/free-vector/online-certification-illustration_23-2148573639.jpg"/>
+<img alt="React Developer Certificate" loading="lazy" src="https://img.freepik.com/free-vector/online-certification-illustration_23-2148573639.jpg"/>
 <h4>React Developer</h4>
 <p>Issued by Meta – 2023</p>
 </div>
 <div class="certificate-card">
-<img alt="Smart Contract Auditing" src="https://img.freepik.com/premium-vector/certificate-achievement-template_62391-308.jpg"/>
+<img alt="Smart Contract Auditing" loading="lazy" src="https://img.freepik.com/premium-vector/certificate-achievement-template_62391-308.jpg"/>
 <h4>Smart Contract Security</h4>
 <p>Issued by Alchemy University – 2024</p>
 </div>
@@ -918,7 +1035,7 @@ section {
 <h2 data-aos="fade-up" data-aos-duration="1500">Our Team</h2>
 <div class="team-container container">
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1000">
-<img alt="John Doe - Full Stack Developer" src="https://randomuser.me/api/portraits/men/32.jpg"/>
+<img alt="John Doe - Full Stack Developer" loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg"/>
 <h3>John Doe</h3>
 <p>Full Stack Web Developer</p>
 <div class="team-socials">
@@ -927,7 +1044,7 @@ section {
 </div>
 </article>
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1200">
-<img alt="Jane Smith - UI/UX Designer" src="https://randomuser.me/api/portraits/women/45.jpg"/>
+<img alt="Jane Smith - UI/UX Designer" loading="lazy" src="https://randomuser.me/api/portraits/women/45.jpg"/>
 <h3>Jane Smith</h3>
 <p>UI/UX Designer</p>
 <div class="team-socials">
@@ -936,7 +1053,7 @@ section {
 </div>
 </article>
 <article class="team-member" data-aos="zoom-in" data-aos-duration="1400">
-<img alt="Carlos Rodriguez - Blockchain Engineer" src="https://randomuser.me/api/portraits/men/65.jpg"/>
+<img alt="Carlos Rodriguez - Blockchain Engineer" loading="lazy" src="https://randomuser.me/api/portraits/men/65.jpg"/>
 <h3>Carlos Rodriguez</h3>
 <p>Blockchain Engineer</p>
 <div class="team-socials">
@@ -949,10 +1066,10 @@ section {
 <section aria-label="Trusted by Companies" id="trusted">
 <h2 data-aos="fade-up" data-aos-duration="1500">Trusted by Companies</h2>
 <div class="trusted-logos container" data-aos="fade-up" data-aos-duration="1800">
-<img alt="Fiverr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png"/>
-<img alt="LogoTV" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png"/>
-<img alt="IBM" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&amp;s"/>
-<img alt="Google" src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg"/>
+<img alt="Fiverr" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Fiverr_Logo_fiverr.png/640px-Fiverr_Logo_fiverr.png"/>
+<img alt="LogoTV" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Upwork-logo.svg/640px-Upwork-logo.svg.png"/>
+<img alt="IBM" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&amp;s"/>
+<img alt="Google" loading="lazy" src="https://icoholder.com/files/img/dff0c70f59229c185f660eb839c56683.jpeg"/>
 </div>
 </section>
 <section aria-label="Client Testimonials" id="testimonials">
@@ -985,35 +1102,35 @@ section {
 </div>
 <div class="portfolio-grid container">
 <article aria-label="Project: Portfolio Website" class="portfolio-item" data-aos="fade-up" data-aos-duration="1000" data-category="web" tabindex="0">
-<img alt="Screenshot of Portfolio Website" src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp"/>
+<img alt="Screenshot of Portfolio Website" loading="lazy" src="https://cdn.cmsfly.com/635bcad9b8a74e0091632998/sean-designer-portfolio-example--Nt5zO.webp"/>
 <div class="portfolio-content">
 <h3>Portfolio Website</h3>
 <p>Responsive portfolio website built with React and CSS animations.</p>
 </div>
 </article>
 <article aria-label="Project: Decentralized Voting DApp" class="portfolio-item" data-aos="fade-up" data-aos-duration="1200" data-category="blockchain" tabindex="0">
-<img alt="Screenshot of Decentralized Voting DApp" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png"/>
+<img alt="Screenshot of Decentralized Voting DApp" loading="lazy" src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/907/935/datas/original.png"/>
 <div class="portfolio-content">
 <h3>Voting DApp</h3>
 <p>Smart contract-based voting application using Solidity and Web3.js.</p>
 </div>
 </article>
 <article aria-label="Project: Mobile ToDo App" class="portfolio-item" data-aos="fade-up" data-aos-duration="1400" data-category="mobile" tabindex="0">
-<img alt="Screenshot of Mobile ToDo App" src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png"/>
+<img alt="Screenshot of Mobile ToDo App" loading="lazy" src="https://topflightapps.com/wp-content/uploads/2022/02/defi-crypto-exchange.png"/>
 <div class="portfolio-content">
 <h3>DeFi Platform</h3>
 <p>DeFi DApp with smart contracts and liquidity pools that let users instantly exchange tokens, stake, farm </p>
 </div>
 </article>
 <article aria-label="Project: E-Commerce Site" class="portfolio-item" data-aos="fade-up" data-aos-duration="1600" data-category="web" tabindex="0">
-<img alt="Screenshot of E-Commerce Site" src="https://themefisher.com/blog/flatastic.webp"/>
+<img alt="Screenshot of E-Commerce Site" loading="lazy" src="https://themefisher.com/blog/flatastic.webp"/>
 <div class="portfolio-content">
 <h3>E-Commerce Site</h3>
 <p>Online store built with Next.js, Node.js backend, and Stripe payments.</p>
 </div>
 </article>
 <article aria-label="Project: NFT Marketplace" class="portfolio-item" data-aos="fade-up" data-aos-duration="1800" data-category="blockchain" tabindex="0">
-<img alt="Screenshot of NFT Marketplace" src="https://cdn.dribbble.com/userupload/35209642/file/original-4b3c8f0e10bfd97795f46d7790b63a3e.png?format=webp&amp;resize=400x300&amp;vertical=center"/>
+<img alt="Screenshot of NFT Marketplace" loading="lazy" src="https://cdn.dribbble.com/userupload/35209642/file/original-4b3c8f0e10bfd97795f46d7790b63a3e.png?format=webp&amp;resize=400x300&amp;vertical=center"/>
 <div class="portfolio-content">
 <h3>NFT Marketplace</h3>
 <p>Marketplace for minting and trading NFTs using Ethereum blockchain.</p>
@@ -1023,31 +1140,33 @@ section {
 </section>
 <section aria-label="Latest Blog Posts" id="blog">
 <h2 data-aos="fade-up" data-aos-duration="1500">Latest Articles</h2>
-<div class="blog-grid container" data-aos="fade-up" data-aos-duration="1800">
-<article class="blog-card">
-<img alt="Blog post 1" src="https://talent500.com/blog/wp-content/uploads/sites/42/2024/05/react-must-be-in-scope-when-using-jsx-scaled-1.jpg"/>
-<div class="blog-content">
-<h3>Mastering React Performance</h3>
-<p>Learn how to optimize your React apps with memoization, lazy loading, and more.</p>
-<a href="https://reactnative.dev/" rel="noopener noreferrer" target="_blank">Read More →</a>
+
+<div class="blog-grid" id="blogGrid">
+<p>Loading blog posts...</p>
 </div>
-</article>
-<article class="blog-card">
-<img alt="Blog post 2" src="https://media.licdn.com/dms/image/v2/D4D12AQG4KLFQnf0qjA/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1661102421998?e=2147483647&amp;v=beta&amp;t=LPKr9YrokzJ69_rnf14sso0EYaYH4Cu3V-5Sh0BQbn8"/>
-<div class="blog-content">
-<h3>Intro to Solidity for Developers</h3>
-<p>Dive into the fundamentals of smart contract development on Ethereum.</p>
-<a href="https://soliditylang.org/" rel="noopener noreferrer" target="_blank">Read More →</a>
+
+</section>
+<section id="tech-stack">
+<h2>Tech Stack</h2>
+<div class="tech-icons">
+<div class="tech" title="React (3 years)">
+<img alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>
 </div>
-</article>
-<article class="blog-card">
-<img alt="Blog post 3" src="https://wpdean.com/wp-content/uploads/2024/05/tailwind-css.jpg"/>
-<div class="blog-content">
-<h3>Design Systems in Front-End</h3>
-<p>Build scalable and consistent UI with design systems using Tailwind &amp; CSS variables.</p>
-<a href="https://tailwindcss.com/" rel="noopener noreferrer" target="_blank">Read More →</a>
+<div class="tech" title="Node.js (2 years)">
+<img alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"/>
 </div>
-</article>
+<div class="tech" title="Solidity (Smart Contracts)">
+<img alt="Solidity" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg"/>
+</div>
+<div class="tech" title="HTML5">
+<img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+</div>
+<div class="tech" title="CSS3">
+<img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+</div>
+<div class="tech" title="JavaScript">
+<img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+</div>
 </div>
 </section>
 <form action="https://formspree.io/f/mblovggn" class="contact-form" data-aos="fade-up" data-aos-duration="1700" method="POST">
@@ -1056,14 +1175,15 @@ section {
 <textarea name="message" placeholder="Your Message" required="" rows="5"></textarea>
 <button type="submit">Send Message</button>
 </form>
-<footer>
+</main>
+<footer id="footer-text">
     © 2025 Johnson Oluwasegun. All rights reserved.
   </footer>
 <button aria-label="Back to top" id="backToTop" title="Back to top">
 <i class="fas fa-arrow-up"></i>
 </button>
 <!-- AOS Library -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -1257,4 +1377,98 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 50 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true },
+    color: { value: "#ffffff" }
+  }
+});
+</script>
+<script>
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').includes(current)) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+<script>
+async function loadLiveBlogPosts() {
+  const feedURLs = [
+    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/web3',
+    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/blockchain',
+    'https://api.rss2json.com/v1/api.json?rss_url=https://dev.to/feed/tag/fullstack',
+    'https://api.rss2json.com/v1/api.json?rss_url=https://www.coindesk.com/arc/outboundfeeds/rss/'
+  ];
+
+  const fallbackImages = [
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*2UoJUkcJ2sXL-1dNis3VbA.png',
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*v7VK-waf4RUWfY2fH3-60g.png',
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*I-RdUNsGrDnhnbEZ7tLoGA.png',
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hTyuJFxmJaULcZ6XfVnNVg.jpeg',
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*kxAcmXrWPuGZBM-UakLwFw.png',
+    'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*qkZUdF7hJUFt-b-Ggk-Taw.png'
+  ];
+
+  const blogGrid = document.getElementById('blogGrid');
+  if (!blogGrid) return;
+
+  try {
+    let allPosts = [];
+    for (const url of feedURLs) {
+      const res = await fetch(url);
+      const data = await res.json();
+      if (data.items) allPosts.push(...data.items);
+    }
+
+    const keywords = ['blockchain', 'web3', 'smart contract', 'ethereum', 'solidity', 'node', 'full stack', 'frontend', 'backend', 'react', 'javascript'];
+    const filtered = allPosts.filter(p =>
+      keywords.some(k => (p.title + p.description).toLowerCase().includes(k))
+    );
+
+    const uniquePosts = [...new Map(filtered.map(p => [p.link, p])).values()];
+    const selected = uniquePosts.sort(() => Math.random() - 0.5).slice(0, 6);
+
+    blogGrid.innerHTML = '';
+    selected.forEach((post, i) => {
+      let imgMatch = post.content?.match(/<img[^>]+src="([^">]+)"/i);
+      let imageUrl = post.thumbnail || (imgMatch && imgMatch[1]) || fallbackImages[i % fallbackImages.length];
+
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <img src="${imageUrl}" alt="Blog thumbnail" loading="lazy" />
+        <h3>${post.title}</h3>
+        <p><strong>${new Date(post.pubDate).toDateString()}</strong></p>
+        <p>${post.description.replace(/<[^>]+>/g, '').slice(0, 100)}...</p>
+        <a href="${post.link}" target="_blank">Read More</a>
+      `;
+      blogGrid.appendChild(card);
+    });
+  } catch (err) {
+    blogGrid.innerHTML = '<p style="color:red;">Unable to load blog posts.</p>';
+    console.error(err);
+  }
+}
+document.addEventListener('DOMContentLoaded', loadLiveBlogPosts);
+</script>
 </body> </html>
+
