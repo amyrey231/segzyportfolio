@@ -4,7 +4,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Johnson | Full Stack Developer Portfolio</title>
+<title>Segzy | Full Stack Developer Portfolio</title>
+
+<meta property="og:title" content="Johnson | Full Stack & Blockchain Developer" />
+<meta property="og:description" content="Explore my portfolio, skills in React, Solidity, Web3, and more." />
+<meta property="og:image" content="https://cdn.solo.to/user/a/68331238e3a968_21877852.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
 <meta content="Full Stack Web &amp; Blockchain Developer portfolio of Johnson Oluwasegun. Explore my work, blog, and contact details." name="description"/>
 <meta content="Full Stack Developer, Blockchain, React, Node.js, Solidity, Web3, Portfolio" name="keywords"/>
 <meta content="Johnson Oluwasegun" name="author"/>
@@ -165,8 +171,8 @@ img, video { max-width: 100%; height: auto; display: block; }
 
     /* Hero Section */
     #hero {
-      height: 100vh;
-      background: url('https://technology.online.city.ac.uk/media/mageplaza/blog/post/b/l/blockchain_technology-2.jpg') no-repeat center center/cover;
+      min-height: 60vh;
+      background: url('https://cacm.acm.org/wp-content/uploads/2024/09/091324.RE_.Brief-History-Blockchain.jpg') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1393,6 +1399,32 @@ section {
   text-decoration: none;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  #hero {
+    min-height: 60vh;
+    padding: 40px 15px;
+    background-size: cover;
+  }
+  #hero h1 {
+    font-size: 1.8rem;
+  }
+  #typed {
+    font-size: 1rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  #hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script></head>
 <body>
@@ -1406,7 +1438,7 @@ section {
 <li><a href="#services">Services</a></li>
 <li><a href="#statistics">Stats</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#contact-form">Contact</a></li>
 </ul>
 </nav>
 <button aria-label="Toggle dark and light mode" id="modeToggle" title="Toggle dark/light mode">
@@ -1417,9 +1449,9 @@ section {
 <main>
 <section aria-label="Introduction" id="hero" role="banner"><div id="particles-js"></div>
 <div class="content" data-aos="fade-up" data-aos-duration="1500">
-<h1 id="hero-heading">Hello, I'm Segzy</h1>
+<h1 id="hero-heading">Hi, I’m Segzy</h1>
 <div aria-atomic="true" aria-live="polite" id="typed"></div>
-<p>Bridging the Web and Blockchain with Clean Code and Scalable Architecture.</p>
+<p>Bridging Web and Blockchain with Clean Code and Scalable Architecture.</p>
 </div>
 </section>
 <section aria-label="About Me" id="about">
@@ -1440,7 +1472,7 @@ section {
 </article>
 <article aria-describedby="service3-desc" class="service-card" data-aos="zoom-in" data-aos-duration="1600" tabindex="0">
 <i class="fas fa-mobile-alt"></i>
-<h3>Mobile Friendly Apps</h3>
+<h3>Mobile-Responsive Web Apps</h3>
 <p id="service3-desc">Creating mobile-optimized web apps with smooth performance and user-friendly interfaces.</p>
 </article>
 </div>
@@ -1924,4 +1956,31 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+
+<script>
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      fetch(contactForm.action, {
+        method: contactForm.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert("Thank you! Your message has been successfully forwarded to the developer.");
+          contactForm.reset();
+        } else {
+          alert("Oops! Something went wrong.");
+        }
+      }).catch(() => {
+        alert("Oops! Network error. Please try again later.");
+      });
+    });
+  }
+</script>
+
 </body> </html>
