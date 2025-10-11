@@ -3,536 +3,1068 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SegzyCode | Full Stack Developer portfolio showcasing services, skills, and projects.">
-  <title>Segzy | Full Stack Developer</title>
-  <link rel="icon" href="SegzyCode Logo.png" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="SegzyCode - Full Stack Web, Web3, Mobile & Blockchain Developer. Delivering high-quality websites, DApps, and mobile apps.">
+  <meta name="keywords" content="Full Stack Developer, Web Developer, Blockchain Developer, Mobile App Developer, Web3, DApp, React, Node.js, Tailwind CSS, Portfolio">
+  <meta name="author" content="SegzyCode">
+    <link rel="icon" href="SegzyCode Logo.png" type="image/png">
+
+     <meta property="og:title" content="SegzyCode | Full Stack Web & Blockchain Developer">
+  <meta property="og:description" content="High-quality websites, DApps, and mobile apps by SegzyCode.">
+  <meta property="og:image" content="SegzyCode Logo.png">
+  <meta property="og:url" content="https://segzyportfolio.vercel.app">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SegzyCode | Full Stack Web & Blockchain Developer">
+  <meta name="twitter:description" content="High-quality websites, DApps, and mobile apps by SegzyCode.">
+  <meta name="twitter:image" content="SegzyCode Logo.png">
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+  <title>SegzyCode | Portfolio Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html { scroll-behavior: smooth; }
-    ::selection { background: #3b82f6; color: white; }
-    .typing { font-weight: 600; color: #3b82f6; min-height: 1.5em; display: inline-block; }
-    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 50; }
-    .modal-bg.active { display: flex; }
-    .modal-content img { max-height: 80vh; border-radius: 0.5rem; max-width: 90vw; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f1112;
+      color: #f5f7fa;
+    }
+
+    /* Keep "Shaping + rotating word" together */
+    .inline-nowrap {
+      display: inline-block;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    /* Rotating text animation */
+    .rotate-container {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+  height: 1.2em;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Let container size itself to the longest word */
+.rotate-container::after {
+  content: "Concepts"; /* longest word */
+  visibility: hidden;
+  display: inline-block;
+}
+
+
+    .rotate-container span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(100%);
+      animation: rotateWords 8s linear infinite;
+    }
+
+    .rotate-container span:nth-child(1) { animation-delay: 0s; }
+    .rotate-container span:nth-child(2) { animation-delay: 2s; }
+    .rotate-container span:nth-child(3) { animation-delay: 4s; }
+    .rotate-container span:nth-child(4) { animation-delay: 6s; }
+
+    @keyframes rotateWords {
+      0% { transform: translateY(100%); opacity: 0; }
+      10% { transform: translateY(0); opacity: 1; }
+      25% { transform: translateY(0); opacity: 1; }
+      35% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(-100%); opacity: 0; }
+    }
+
+    /* add more gap between "Shaping" and rotating text */
+    .no-gap {
+      margin-left: 0.6ch;
+    }
+
+    .subline {
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        text-align: left !important;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+        line-height: 1.25;
+        text-align: left !important;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      .rotate-container {
+        min-width: 5.5ch;
+        height: 1.25em;
+        line-height: 1.25em;
+      }
+
+      .hero-para, .hero-btn {
+        text-align: left !important;
+      }
+    }
+   
   </style>
 </head>
-<body class="bg-black text-white font-sans">
 
-<!-- Header with mobile support -->
-<header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 shadow-lg">
-<div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
-    <img src="SegzyCode Logo.png" alt="SZ Logo" class="w-10 h-10 object-contain rounded-full" />
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6 text-sm">
-      <a href="#home" class="hover:text-blue-400">Home</a>
-      <a href="#about" class="hover:text-blue-400">About</a>
-      <a href="#services" class="hover:text-blue-400">Services</a>
-      <a href="#skills" class="hover:text-blue-400">Skills</a>
-      <a href="#portfolio" class="hover:text-blue-400">Portfolio</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
-    </nav>
-    <!-- Mobile Nav Toggle -->
-    <button id="menuBtn" class="md:hidden text-white focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/>
-      </svg>
-    </button>
+<body class="min-h-screen flex flex-col">
+
+
+  <!-- Splash Screen -->
+<div id="splash" class="fixed inset-0 flex flex-col items-center justify-center bg-[#0f1112] z-50 transition-opacity duration-1000">
+  <div class="relative flex items-center justify-center w-28 h-28 sm:w-36 sm:h-36 mb-6 animate-fadeScaleIn">
+    <!-- Outer Glow Circle -->
+    <div class="absolute inset-0 rounded-full border-[3px] sm:border-4 border-[#cfe3ff] animate-glow"></div>
+
+    <!-- Rotating Gradient Ring -->
+    <div class="absolute inset-0 rounded-full overflow-hidden flex items-center justify-center">
+      <div class="w-full h-full rounded-full bg-gradient-to-tr from-[#cfe3ff33] via-[#00bfff66] to-transparent animate-rotate"></div>
+    </div>
+
+    <!-- Center Logo -->
+    <img src="SegzyCode Logo.png" alt="SegzyCode Logo"
+         class="w-16 h-16 sm:w-20 sm:h-20 rounded-full z-10 shadow-lg shadow-[#cfe3ff55] object-cover">
   </div>
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
-    <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
-    <a href="#about" class="block py-2 hover:text-blue-400">About</a>
-    <a href="#services" class="block py-2 hover:text-blue-400">Services</a>
-    <a href="#skills" class="block py-2 hover:text-blue-400">Skills</a>
-    <a href="#portfolio" class="block py-2 hover:text-blue-400">Portfolio</a>
-    <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
-  </div>
-</header>
 
-<!-- Hero section with typing effect -->
-<section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 bg-cover bg-center bg-no-repeat" style="background-image: url('https://www.creative-tim.com/blog/content/images/size/w960/2022/01/which-development-job-is-right-for-you.jpg');">
-  <div data-aos="fade-up" class="z-10 bg-black bg-opacity-60 p-6 rounded-lg">
-<h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-400">SegzyCode</span></h1>
-    <span id="typing" class="text-2xl md:text-3xl typing"></span>
-    <div class="mt-6 space-x-4">
-      <a href="#contact" class="border border-white px-6 py-2 rounded hover:bg-white hover:text-black font-semibold">Hire Me</a>
-<a href="#portfolio" class="bg-gray-800 px-6 py-2 rounded hover:bg-gray-700 font-semibold">My Work</a>
-
-</div>
-  </div>
-</section>
-
-<section id="about" class="py-24 px-6 bg-gray-900 text-center" data-aos="fade-up">
-  <img src="SegzyCode Logo.png" alt="SegzyCode Logo" class="w-28 h-28 mx-auto rounded-full mb-6" />
-  <h2 class="text-3xl font-bold mb-2 text-blue-400">SegzyCode</h2>
-  <p class="text-gray-400 text-lg mb-6 italic">Building the Future of Web and Blockchain, One Project at a Time.</p>
-  
-  <p class="text-gray-300 max-w-3xl mx-auto leading-relaxed">
-    Hi, I’m <span class="font-semibold text-white">SegzyCode</span>, a passionate developer who thrives on 
-    turning ideas into polished digital products. With years of hands-on experience, I’ve worked with 
-    startups and businesses to create solutions that are not only functional but also future-ready.  
-  </p>
-  <p class="text-gray-300 max-w-3xl mx-auto mt-4 leading-relaxed">
-    I focus on delivering value through clean design, reliable performance, and innovative problem-solving. 
-    For me, development isn’t just about writing code — it’s about helping people bring their vision to life.  
-  </p>
-</section>
-
-<section id="services" class="py-24 px-6 bg-black text-center">
-  <h2 class="text-3xl font-bold mb-6 text-blue-400">Services</h2>
-  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    
-    <!-- Web Development -->
-    <div class="bg-gray-800 p-6 rounded-xl shadow" data-aos="fade-up">
-      <h3 class="text-xl font-semibold text-white mb-2">Web Development</h3>
-      <p class="text-gray-300">
-I design and build fast, responsive, and SEO-friendly websites with modern frameworks to give your business a powerful online presence.      </p>
-    </div>
-    
-    <!-- Blockchain Development -->
-    <div class="bg-gray-800 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="text-xl font-semibold text-white mb-2">Blockchain Solutions</h3>
-      <p class="text-gray-300">
-I build secure smart contracts, DApps, NFT marketplaces, and DeFi platforms that bring your blockchain ideas to life.      </p>
-    </div>
-    
-    <!-- Mobile App Development -->
-    <div class="bg-gray-800 p-6 rounded-xl shadow" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-xl font-semibold text-white mb-2">Mobile App Development</h3>
-      <p class="text-gray-300">
-From idea to launch, I build responsive mobile apps optimized for performance, usability, and scalability.      </p>
-    </div>
-    
-  </div>
-</section>
-
-
-<section id="skills" class="py-24 px-6 bg-gray-900 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-blue-400">Tech Stack</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
-    
-    <!-- Frontend -->
-    <div>
-      <h3 class="flex items-center text-xl font-semibold text-white mb-2">
-        <svg class="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-        Frontend
-      </h3>
-      <ul class="text-gray-300 space-y-1">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>Tailwind CSS</li>
-        <li>Bootstrap</li>
-      </ul>
-    </div>
-
-    <!-- Backend -->
-    <div>
-      <h3 class="flex items-center text-xl font-semibold text-white mb-2">
-        <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
-        Backend
-      </h3>
-      <ul class="text-gray-300 space-y-1">
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>PHP (Laravel)</li>
-        <li>REST APIs</li>
-        <li>GraphQL</li>
-      </ul>
-    </div>
-
-    <!-- Databases -->
-    <div>
-      <h3 class="flex items-center text-xl font-semibold text-white mb-2">
-        <svg class="w-6 h-6 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
-        Databases
-      </h3>
-      <ul class="text-gray-300 space-y-1">
-        <li>MongoDB</li>
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-      </ul>
-    </div>
-
-    <!-- Blockchain / Web3 (Accordion) -->
-<div x-data="{ open: true }" class="sm:col-span-2 md:col-span-3">
-  <h3 @click="open = !open" 
-      class="flex items-center justify-between text-xl font-semibold text-white mb-2 cursor-pointer bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition">
-    <span class="flex items-center">
-      <svg class="w-6 h-6 mr-2 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-      </svg>
-      Blockchain / Web3
-    </span>
-    <span class="flex items-center text-sm text-gray-400">
-      <svg :class="{'rotate-180': open}" class="w-5 h-5 ml-1 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-      </svg>
-    </span>
-  </h3>
-
-  <!-- Dropdown Content -->
-  <div x-show="open" class="bg-gray-800 p-4 rounded-lg text-gray-300 space-y-2">
-    <p><strong>EVM Chains:</strong> Solidity, Hardhat, Truffle</p>
-    <p><strong>Solana:</strong> Rust, Anchor Framework</p>
-    <p><strong>DApp Integration:</strong> Web3.js, Ethers.js</p>
-    <p><strong>Wallets:</strong> MetaMask, WalletConnect, Phantom</p>
-    <p><strong>Smart Contracts:</strong> Tokens (ERC20, BEP20, SPL), NFTs (ERC721, ERC1155), Staking, DeFi</p>
-    <p><strong>Other Tools:</strong> IPFS, Pinata, Alchemy, Moralis, The Graph</p>
-  </div>
+  <h1 id="loading-text" class="text-[#cfe3ff] text-xl sm:text-2xl font-semibold text-center tracking-wider typing-cursor animate-fadeIn"></h1>
 </div>
 
-    <!-- Mobile -->
-    <div>
-      <h3 class="flex items-center text-xl font-semibold text-white mb-2">
-        <svg class="w-6 h-6 mr-2 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6m2 0h-2a2 2 0 01-2 2H9a2 2 0 01-2-2H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2z"/></svg>
-        Mobile Development
-      </h3>
-      <ul class="text-gray-300 space-y-1">
-        <li>React Native</li>
-        <li>Flutter</li>
-      </ul>
-    </div>
+<style>
+/* Cursor blink */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #cfe3ff;
+}
 
-    <!-- Tools -->
-    <div>
-      <h3 class="flex items-center text-xl font-semibold text-white mb-2">
-        <svg class="w-6 h-6 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-        Tools
-      </h3>
-      <ul class="text-gray-300 space-y-1">
-        <li>Git & GitHub</li>
-        <li>Docker</li>
-        <li>Postman</li>
-        <li>Figma</li>
-        <li>VS Code</li>
-        <li>Vercel, Netlify</li>
-      </ul>
-    </div>
+/* Glowing ring */
+@keyframes glow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px #cfe3ff; opacity: 0.8; }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px #00bfff; opacity: 1; }
+}
+.animate-glow {
+  animation: glow 2.5s ease-in-out infinite;
+}
 
-  </div>
-</section>
+/* Rotation */
+@keyframes rotate {
+  0% { transform: rotate(0deg); opacity: 0.7; }
+  100% { transform: rotate(360deg); opacity: 1; }
+}
+.animate-rotate {
+  animation: rotate 6s linear infinite;
+  filter: blur(1px);
+}
 
-<!-- Alpine.js for Accordion -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+/* Cinematic fade + scale animation */
+@keyframes fadeScaleIn {
+  0% { opacity: 0; transform: scale(0.8); filter: blur(4px); }
+  60% { opacity: 1; transform: scale(1.05); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-fadeScaleIn {
+  animation: fadeScaleIn 1.8s ease-out forwards;
+}
 
+/* Fade in text */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 1s;
+}
 
+/* Layout fix */
+#splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-<section id="certificates" class="py-24 px-6 bg-black text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-blue-400">Certificates</h2>
-  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <!-- Certificate Card Example -->
-    <div class="bg-gray-800 p-4 rounded shadow text-left text-white">
-      <img src="https://firebrand.training/media/gc0l4v45/blockchain-c-ll.svg?height=120&v=1dae3587e9b8700" class="w-full h-32 object-cover rounded mb-2">
-      <h3 class="text-lg font-semibold">Certified Blockchain Developer™ (CBD)</h3>
-      <p class="text-sm text-gray-400">Blockchain Council — Feb 2024</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded shadow text-left text-white">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyHXDWa_y17Bn3eVyMhDOizFfK3o0eJFyyiw&s" class="w-full h-32 object-cover rounded mb-2">
-      <h3 class="text-lg font-semibold">Full-Stack Web Developer</h3>
-      <p class="text-sm text-gray-400">Udacity — Mar 2022</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded shadow text-left text-white">
-      <img src="https://play-lh.googleusercontent.com/A0p7yOpfRPkeyK6mxarQ1ip28Y6OU8VTYLYIfwM-d6Q6_InrbOf7Td9bnMFjtcixqMTY=w3840-h2160-rw" class="w-full h-32 object-cover rounded mb-2">
-      <h3 class="text-lg font-semibold">Responsive Web Design</h3>
-      <p class="text-sm text-gray-400">freeCodeCamp — August 2023</p>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="py-24 px-6 bg-gray-900 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-blue-400">Stats</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-3xl font-semibold max-w-5xl mx-auto">
-    <div><span class="counter" data-target="20">0</span><p class="text-sm text-gray-400">Completed Projects</p></div>
-    <div><span class="counter" data-target="10">0</span><p class="text-sm text-gray-400">Happy Clients</p></div>
-    <div><span class="counter" data-target="2">0</span><p class="text-sm text-gray-400">Ongoing Projects</p></div>
-    <div><span class="counter" data-target="5">0</span><p class="text-sm text-gray-400">Years of Experience</p></div>
-  </div>
-</section>
-
-
-<section class="py-24 px-6 bg-black text-center" id="trusted">
-  <h2 class="text-2xl font-bold text-white mb-6">Trusted by Companies & Clients</h2>
-  <div class="flex flex-wrap justify-center items-center gap-8">
-    <img src="https://freelogopng.com/images/all_img/1656738600fiverr-app-logo.png" alt="Company 1" class="h-12" />
-    <img src="https://cdn.worldvectorlogo.com/logos/upwork-roundedsquare-1.svg" alt="Company 2" class="h-12" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&s" alt="Company 3" class="h-12" />
-    <img src="https://avatars.githubusercontent.com/u/97307196?s=280&v=4" alt="Company 4" class="h-12" />
-        <img src="https://krypcore.com/static/media/400%201%20(1).8c0da4b42ab5da2cbb9f.png" alt="Company 4" class="h-12" />
-
-  </div>
-</section>
-
-
-<section id="testimonials" class="py-24 px-6 bg-gray-900 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-12 text-blue-400">Testimonials</h2>
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-left text-white">
-      <p class="text-gray-300 italic mb-4">"Segzy is a brilliant developer. He delivered our blockchain DApp ahead of schedule with clean code and seamless UI."</p>
-      <div class="flex items-center space-x-4">
-        <img src="https://m.media-amazon.com/images/I/31o-VWlOtKL._UF1000,1000_QL80_.jpg" class="w-12 h-12 rounded-full" alt="Client 1">
-        <div>
-          <h4 class="font-semibold">Emily J.</h4>
-          <p class="text-sm text-gray-400">Via LaborX</p>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-left text-white">
-      <p class="text-gray-300 italic mb-4">"From frontend design to backend logic and admin panel creation, Segzy handled everything with professionalism. Our team is thrilled with the result, and we look forward to working together again."</p>
-      <div class="flex items-center space-x-4">
-        <img src="https://static.vecteezy.com/system/resources/previews/051/270/245/non_2x/cartoon-people-avatar-minimalist-human-avatar-versatile-icon-for-online-projects-an-avatar-for-the-profile-picture-of-someone-vector.jpg" class="w-12 h-12 rounded-full" alt="Client 2">
-        <div>
-          <h4 class="font-semibold">Ethan Reynold.</h4>
-          <p class="text-sm text-gray-400">Founder, AmazonBoost</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-left text-white">
-      <p class="text-gray-300 italic mb-4">"I hired this team to build a secure and modern crypto wallet app, and they absolutely delivered. From wallet creation to transaction management, everything works flawlessly. Their knowledge of blockchain is impressive!"</p>
-      <div class="flex items-center space-x-4">
-        <img src="https://m.media-amazon.com/images/I/41jLBhDISxL.jpg" class="w-12 h-12 rounded-full" alt="Client 3">
-        <div>
-          <h4 class="font-semibold">Francis grason.</h4>
-          <p class="text-sm text-gray-400">Via Fiverr</p>
-        </div>
-      </div>
-    </div>
-
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg text-left text-white">
-      <p class="text-gray-300 italic mb-4">"Outstanding work! 0xSegzy designed and built a stunning landing page for our eCommerce store. It's modern, fast, and converts really well."</p>
-      <div class="flex items-center space-x-4">
-        <img src="https://m.media-amazon.com/images/I/41jLBhDISxL.jpg" class="w-12 h-12 rounded-full" alt="Client 3">
-        <div>
-          <h4 class="font-semibold">Kelvin.</h4>
-          <p class="text-sm text-gray-400">Via LaborX</p>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section id="portfolio" class="py-24 px-6 bg-black text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-12 text-blue-400">My Work</h2>
-
-  <div class="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
-    
-    <!-- NFT Marketplace -->
-    <div class="bg-gray-800 rounded-xl shadow p-5 text-left">
-      <div class="relative overflow-hidden rounded-lg cursor-pointer group portfolio-item" data-img="https://cdn.dribbble.com/userupload/37368008/file/original-8b7f15382af0b6e8cf19dc4a52ea4976.jpg?resize=752x564&vertical=center">
-        <img src="https://cdn.dribbble.com/userupload/37368008/file/original-8b7f15382af0b6e8cf19dc4a52ea4976.jpg?resize=752x564&vertical=center" alt="NFT Marketplace" class="rounded w-full h-60 object-cover group-hover:scale-105 transition duration-300">
-      </div>
-      <h3 class="text-white text-xl font-semibold mt-4"> NFT Marketplace – Decentralized Digital Asset Platform</h3>
-      <p class="text-gray-400 mt-2 text-sm">The NFT Marketplace is a decentralized application (DApp) that allows users to mint, buy, sell, and trade NFTs securely on the Ethereum blockchain. Built with React, Solidity, Web3.js, and IPFS, this platform provides a user-friendly interface for artists, collectors, and investors.</p>
-    </div>
-
-    <!-- DeFi Dashboard -->
-    <div class="bg-gray-800 rounded-xl shadow p-5 text-left">
-      <div class="relative overflow-hidden rounded-lg cursor-pointer group portfolio-item" data-img="https://cdn.dribbble.com/userupload/43603265/file/original-f9f0ecb63c12274cfe23744f33974439.png?resize=1024x768&vertical=center">
-        <img src="https://cdn.dribbble.com/userupload/43603265/file/original-f9f0ecb63c12274cfe23744f33974439.png?resize=1024x768&vertical=center" alt="DeFi Dashboard" class="rounded w-full h-60 object-cover group-hover:scale-105 transition duration-300">
-      </div>
-      <h3 class="text-white text-xl font-semibold mt-4">DeFi Platform</h3>
-      <p class="text-gray-400 mt-2 text-sm">Real-time yield tracking, staking visualizations, and token performance overview for DeFi platforms.</p>
-    </div>
-
-    <!-- Voting DApp -->
-    <div class="bg-gray-800 rounded-xl shadow p-5 text-left">
-      <div class="relative overflow-hidden rounded-lg cursor-pointer group portfolio-item" data-img="https://cdn.dribbble.com/userupload/42887442/file/original-5a0d6d660c9be3e06f8272d1a2d9f5dd.webp?resize=1024x768&vertical=center">
-        <img src="https://cdn.dribbble.com/userupload/42887442/file/original-5a0d6d660c9be3e06f8272d1a2d9f5dd.webp?resize=1024x768&vertical=center" alt="Voting DApp" class="rounded w-full h-60 object-cover group-hover:scale-105 transition duration-300">
-      </div>
-      <h3 class="text-white text-xl font-semibold mt-4">Digital Marketing Agency – Landing Page Design</h3>
-    </div>
-
-    <div class="bg-gray-800 rounded-xl shadow p-5 text-left">
-      <div class="relative overflow-hidden rounded-lg cursor-pointer group portfolio-item" data-img="https://cdn.dribbble.com/userupload/43706185/file/original-0dab215307cee5f82134be2006b5b4bd.png?resize=1024x768&vertical=center">
-        <img src="https://cdn.dribbble.com/userupload/43706185/file/original-0dab215307cee5f82134be2006b5b4bd.png?resize=1024x768&vertical=center" alt="Voting DApp" class="rounded w-full h-60 object-cover group-hover:scale-105 transition duration-300">
-      </div>
-      <h3 class="text-white text-xl font-semibold mt-4">🪙 Crypto Wallet App</h3>
-            <p class="text-gray-400 mt-2 text-sm">I developed a fully functional crypto wallet application that allows users to securely store, send, and receive cryptocurrencies. The app was designed with a clean, intuitive interface and built with a strong focus on security, performance, and Web3 integration..</p>
-
-    </div>
-
-  </div>
-
-  <!-- Modal Preview -->
-  <div id="modal" class="modal-bg">
-    <div class="modal-content">
-      <img id="modal-img" src="#" alt="Full Preview" />
-    </div>
-  </div>
-</section>
-
-
-<section id="contact" class="py-24 px-6 bg-black text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-blue-400">Let’s Build Something Together Today!</h2>
-  <form class="max-w-xl mx-auto space-y-4" action="https://formspree.io/f/mblovggn" method="POST">
-    <input type="hidden" name="_redirect" value="https://segzyportfolio.vercel.app/thank-you.html">
-    <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 rounded bg-gray-800 text-white">
-    <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 rounded bg-gray-800 text-white">
-    <textarea name="message" rows="4" placeholder="Tell me about your project, idea, or how I can help you" required class="w-full px-4 py-2 rounded bg-gray-800 text-white"></textarea>
-    <button type="submit" class="px-6 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white">Send</button>
-  </form>
-<div class="mt-10 text-center">
-  <h3 class="text-xl font-semibold text-white mb-4">Find Me On</h3>
-  <div class="flex justify-center items-center gap-6">
-
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@heissegzy" target="_blank" title="TikTok">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok" class="w-7 h-7" style="filter: invert(1);">
-    </a>
-
-    <!-- Fiverr -->
-    <a href="https://laborx.com/freelancers/users/id259173?ref=" target="_blank" title="LaborX">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedLx_ANDxPSmCvhtNQlOl2UVGyIKA9We7HQ&s" alt="Fiverr" class="w-7 h-7" style="fill: #1DBF73;">
-    </a>
-
-    <!-- Upwork -->
-    <a href="https://www.upwork.com/freelancers/~011487ac94716b7dca?mp_source=share" target="_blank" title="Upwork">
-      <img src="https://www.vectorlogo.zone/logos/upwork/upwork-tile.svg" alt="Upwork" class="w-7 h-7" style="fill: #6FDA44;">
-    </a>
-
-    <!-- X (Twitter) -->
-    <a href="https://x.com/segzycodes" target="_blank" title="X">
-      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X" class="w-7 h-7" style="filter: invert(1);">
-    </a>
-
-  </div>
-</div>
-
-</section>
-
-<footer class="py-6 text-center text-gray-500 text-sm bg-gray-900">© 2025 Segzy. All rights reserved.</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+/* Responsive */
+@media (max-width: 640px) {
+  #splash {
+    padding: 0 1rem;
+  }
+  #splash h1 {
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+  }
+  #splash img {
+    width: 4rem;
+    height: 4rem;
+  }
+  #splash > div {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+</style>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const text = "Portfolio loading..............";
+  const loadingText = document.getElementById("loading-text");
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      loadingText.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 60);
+    }
+  }
+  type();
+
+  // Fade out after 5 seconds
+  setTimeout(() => {
+    const splash = document.getElementById('splash');
+    splash.style.opacity = '0';
+    setTimeout(() => splash.remove(), 1000);
+  }, 5000);
+});
+</script>
+
+
+
+
+  <!-- Navbar with Logo Circle -->
+<nav class="flex justify-between items-center px-6 md:px-16 py-5 bg-[#0f1112]">
+  <!-- Logo + Name -->
+  <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 bg-[#1f2123] rounded-full flex items-center justify-center">
+      <!-- Optional: You can put an icon or initials here -->
+      <span class="text-[#cfe3ff] font-bold">SC</span>
+    </div>
+    <h1 class="text-xl font-bold text-[#cfe3ff]">SegzyCode</h1>
+  </div>
+
+  <!-- Menu Links -->
+  <ul class="hidden md:flex space-x-8 text-sm text-gray-400">
+    <li><a href="#projects" class="hover:text-[#cfe3ff] transition-colors">Projects</a></li>
+    <li><a href="#about" class="hover:text-[#cfe3ff] transition-colors">About Me</a></li>
+    <li><a href="#techstack" class="hover:text-[#cfe3ff] transition-colors">Skills</a></li>
+    <li><a href="#contact" class="hover:text-[#cfe3ff] transition-colors">Contact</a></li>
+  </ul>
+
+ <a href="Johnson_Oluwasegun_Resume.pdf" target="_blank" rel="noopener noreferrer">
+  <button class="border border-[#cfe3ff] text-sm px-5 py-2 rounded-lg hover:bg-[#cfe3ff] hover:text-[#0f1112] transition">
+    Resume
+  </button>
+</a>
+</nav>
+
+
+  <!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10 md:py-20"
+         data-aos="fade-up" 
+         data-aos-duration="1200" 
+         data-aos-easing="ease-out">
   
-  document.addEventListener("DOMContentLoaded", function () {
-    // Init AOS (scroll up/down animation)
-    AOS.init({
-      duration: 1200,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true
-    });
+  <!-- Left Text -->
+  <div class="max-w-2xl hero-text md:text-left text-left">
+    <h1 class="hero-title text-4xl sm:text-5xl md:text-6xl font-bold leading-tight" 
+        data-aos="fade-up" 
+        data-aos-delay="200">
+      <span class="inline-nowrap">
+        Turning<span class="no-gap rotate-container align-middle">
+          <span>Code</span>
+          <span>Ideas</span>
+          <span>Design</span>
+          <span>creativity</span>
+        </span>
+      </span>
+      <span class="subline">into products that drive success</span>
+    </h1>
 
-    // Initialize typing when element is visible
-    const typingInterval = setInterval(() => {
-      const typingEl = document.querySelector("#typing");
-      if (typingEl) {
-        startTyping();
-        clearInterval(typingInterval);
+    <p class="hero-para text-gray-400 mt-6 text-base md:text-lg" 
+       data-aos="fade-up" 
+       data-aos-delay="400">
+      Hi, I’m Johnson, a developer passionate about designing and building digital experiences that make a difference
+    </p>
+    <div class="hero-btn" data-aos="fade-up" data-aos-delay="600">
+      <a href="#projects" class="mt-8 bg-[#cfe3ff] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#b4d4ff] transition inline-block">
+  VIEW MY WORK
+</a>
+    </div>
+  </div>
+
+  <!-- Right Image -->
+  <div class="mt-10 md:mt-0" data-aos="fade-up" data-aos-delay="800">
+    <img src="Johnson Pic (2).png" 
+         alt="profile" 
+         class="w-64 sm:w-72 md:w-96 rounded-xl grayscale mx-auto md:mx-0" />
+  </div>
+</section>
+
+
+
+ <!-- Tech Stack Scroller Section -->
+<section class="w-full overflow-hidden bg-[#101213] py-8 border-y border-gray-800">
+  <div class="scroller flex items-center">
+    <!-- Icons -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" class="tech-icon react" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" class="tech-icon node" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon mongo" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="NextJS" class="tech-icon custom-dark-icon next" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="ExpressJS" class="tech-icon custom-dark-icon express" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="tech-icon html" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="tech-icon css" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon js" />
+    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="tech-icon tailwind" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="tech-icon bootstrap" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="tech-icon custom-dark-icon solidity" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/web3js/web3js-original.svg" alt="Web3.js" class="tech-icon web3" />
+    <img src="https://www.rust-lang.org/logos/rust-logo-512x512.png" alt="Rust" class="tech-icon rust" />
+
+    <!-- Duplicate for seamless scroll -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" class="tech-icon react" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" class="tech-icon node" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon mongo" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="NextJS" class="tech-icon custom-dark-icon next" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="ExpressJS" class="tech-icon custom-dark-icon express" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="tech-icon html" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="tech-icon css" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon js" />
+    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="tech-icon tailwind" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="tech-icon bootstrap" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="tech-icon custom-dark-icon solidity" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/web3js/web3js-original.svg" alt="Web3.js" class="tech-icon web3" />
+    <img src="https://www.rust-lang.org/logos/rust-logo-512x512.png" alt="Rust" class="tech-icon rust" />
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .scroller {
+    display: inline-flex;
+    width: max-content;
+    animation: scroll-horizontal 12s linear infinite;
+  }
+
+  .tech-icon {
+    height: 42px;
+    margin: 0 2.2rem;
+    opacity: 0.9;
+    filter: grayscale(100%) brightness(1.4);
+    transition: all 0.3s ease;
+  }
+
+  .custom-dark-icon {
+    filter: brightness(2.5) invert(0.8) sepia(0.3) hue-rotate(190deg) saturate(2.5);
+  }
+
+  /* Default hover glow */
+  .tech-icon:hover {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+
+  /* Brand-colored glows */
+  .react:hover     { filter: drop-shadow(0 0 12px #61dafb); }
+  .node:hover      { filter: drop-shadow(0 0 12px #3c873a); }
+  .mongo:hover     { filter: drop-shadow(0 0 12px #4db33d); }
+  .next:hover      { filter: drop-shadow(0 0 12px #ffffffaa); }
+  .express:hover   { filter: drop-shadow(0 0 12px #d1d5db); }
+  .html:hover      { filter: drop-shadow(0 0 12px #e34c26); }
+  .css:hover       { filter: drop-shadow(0 0 12px #264de4); }
+  .js:hover        { filter: drop-shadow(0 0 12px #f7df1e); }
+  .tailwind:hover  { filter: drop-shadow(0 0 12px #38bdf8); }
+  .bootstrap:hover { filter: drop-shadow(0 0 12px #7952b3); }
+  .solidity:hover  { filter: drop-shadow(0 0 12px #b2b2b2); }
+  .web3:hover      { filter: drop-shadow(0 0 12px #f16822); }
+  .rust:hover      { filter: drop-shadow(0 0 12px #dea584); }
+
+  /* Pause on hover */
+  section:hover .scroller {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .tech-icon {
+      height: 34px;
+      margin: 0 1.5rem;
+    }
+  }
+</style>
+
+<!-- About Me Section -->
+<section id="about" class="py-32 bg-[#0f1112] text-gray-200 px-6 md:px-20"
+         data-aos="fade-up" 
+         data-aos-duration="1200" 
+         data-aos-easing="ease-out">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-start gap-12">
+    
+    <!-- Left Text -->
+    <div class="md:w-2/3" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-5xl md:text-6xl font-bold mb-8 text-left" data-aos="fade-up" data-aos-delay="300">
+        About <span class="text-[#cfe3ff]">Me</span>
+      </h2>
+
+      <p class="text-gray-400 text-lg md:text-xl leading-relaxed mb-8 text-left" data-aos="fade-up" data-aos-delay="400">
+        I'm <span class="text-[#cfe3ff] font-semibold">Johnson (SegzyCode)</span>, a passionate <span class="text-[#cfe3ff] font-semibold">full stack web and blockchain developer</span> 
+        who loves turning ideas into seamless digital experiences. With a strong focus on clean design, performance, and usability, I build everything from responsive web interfaces to decentralized applications. 
+        <br><br>
+        My work blends creativity and technical precision whether it’s crafting smooth user web interfaces, writing efficient smart contracts, or connecting systems that scale. I’m always exploring new technologies and pushing boundaries to deliver products that truly make an impact.
+      </p>
+
+      <a href="Johnson_Oluwasegun_Resume.pdf" download
+         class="inline-block px-8 py-4 bg-[#cfe3ff] text-black font-semibold text-lg rounded-lg shadow-lg hover:bg-[#b4d4ff] hover:shadow-[0_0_20px_#cfe3ff] transition duration-300"
+         data-aos="fade-up" data-aos-delay="500">
+        Download Resume
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Stats Section -->
+<section id="stats" class="py-16 bg-[#0f1112] text-gray-200 px-6 md:px-20">
+  <div class="max-w-6xl mx-auto text-left">
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      
+      <!-- Stat Card -->
+      <div class="bg-[#141618] border border-[#1f2123] hover:border-[#cfe3ff] transition-all duration-300 rounded-2xl shadow-md p-6 text-center hover:shadow-[0_0_15px_#cfe3ff20]">
+        <span class="text-4xl md:text-5xl font-bold text-[#cfe3ff] counter" data-target="5">0</span>
+        <p class="text-gray-400 text-sm md:text-base mt-2">Years of Experience</p>
+      </div>
+
+      <div class="bg-[#141618] border border-[#1f2123] hover:border-[#cfe3ff] transition-all duration-300 rounded-2xl shadow-md p-6 text-center hover:shadow-[0_0_15px_#cfe3ff20]">
+        <span class="text-4xl md:text-5xl font-bold text-[#cfe3ff] counter" data-target="50">0</span>
+        <p class="text-gray-400 text-sm md:text-base mt-2">Completed Projects</p>
+      </div>
+
+      <div class="bg-[#141618] border border-[#1f2123] hover:border-[#cfe3ff] transition-all duration-300 rounded-2xl shadow-md p-6 text-center hover:shadow-[0_0_15px_#cfe3ff20]">
+        <span class="text-4xl md:text-5xl font-bold text-[#cfe3ff] counter" data-target="40">0</span>
+        <p class="text-gray-400 text-sm md:text-base mt-2">Happy Clients</p>
+      </div>
+
+      <div class="bg-[#141618] border border-[#1f2123] hover:border-[#cfe3ff] transition-all duration-300 rounded-2xl shadow-md p-6 text-center hover:shadow-[0_0_15px_#cfe3ff20]">
+        <span class="text-4xl md:text-5xl font-bold text-[#cfe3ff] counter" data-target="100">0</span>
+        <p class="text-gray-400 text-sm md:text-base mt-2">Task Completion Rate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // lower = faster
+
+  const animateCounters = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target + (target === 100 ? '%' : '+');
+          }
+        };
+        updateCount();
+      } else {
+        entry.target.innerText = '0';
       }
-    }, 100);
-
-    // Register ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Counter animation
-    document.querySelectorAll('.counter').forEach(counter => {
-      let target = +counter.getAttribute('data-target');
-      let current = 0;
-
-      ScrollTrigger.create({
-        trigger: counter,
-        start: 'top 90%',
-        once: true,
-        onEnter: () => {
-          const update = () => {
-const increment = Math.max(1, Math.ceil(target / 300));
-            current += increment;
-            if (current >= target) {
-              counter.textContent = `${target}+`;
-            } else {
-              counter.textContent = current;
-              requestAnimationFrame(update);
-            }
-          };
-          update();
-        }
-      });
     });
+  };
 
-    // Modal image view (portfolio)
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
+  const observer = new IntersectionObserver(animateCounters, {
+    threshold: 0.4
+  });
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-      item.addEventListener("click", () => {
-        modalImg.src = item.getAttribute("data-img");
-        modal.classList.add("active");
-      });
-    });
+  counters.forEach(counter => observer.observe(counter));
+</script>
 
-    modal.addEventListener("click", () => {
-      modal.classList.remove("active");
-    });
+
+<!-- Services Section - Unified Theme Style -->
+<section id="services" class="py-24 bg-[#0f1112] text-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-extrabold mb-4" data-aos="fade-down" data-aos-duration="1000">My Expertise</h2>
+      <p class="text-gray-400 max-w-3xl mx-auto text-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        I deliver modern web and Web3 solutions that combine style, performance, and security.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-12">
+      <!-- Service Card 1 -->
+      <div class="group relative bg-[#141618] border-l-4 border-[#cfe3ff] p-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_#cfe3ff40] transition-all duration-500"
+           data-aos="fade-right" data-aos-delay="150">
+        <div class="absolute -top-8 -right-8 w-24 h-24 border-2 border-[#cfe3ff] rounded-full opacity-20 group-hover:opacity-50 transition-all duration-500"></div>
+        <div class="flex flex-col items-center">
+          <div class="bg-[#0f1112] border-2 border-[#cfe3ff] p-5 rounded-xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#cfe3ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM12 14v7m-4-4h8" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2 text-center">Web Development</h3>
+          <p class="text-gray-400 text-center leading-relaxed">
+           I craft modern, responsive, and high-performing websites using the latest web technologies, delivering sleek, user-friendly experiences that work flawlessly across all devices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="group relative bg-[#141618] border-l-4 border-[#cfe3ff] p-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_#cfe3ff40] transition-all duration-500"
+           data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute -top-8 -right-8 w-24 h-24 border-2 border-[#cfe3ff] rounded-full opacity-20 group-hover:opacity-50 transition-all duration-500"></div>
+        <div class="flex flex-col items-center">
+          <div class="bg-[#0f1112] border-2 border-[#cfe3ff] p-5 rounded-xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#cfe3ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7m16 0H4" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2 text-center">Blockchain Development</h3>
+          <p class="text-gray-400 text-center leading-relaxed">
+I develop secure and efficient blockchain solutions, from smart contracts to full DApps, bringing innovation to decentralized ecosystems on EVMs, Solana and beyond.          </p>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="group relative bg-[#141618] border-l-4 border-[#cfe3ff] p-8 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_30px_#cfe3ff40] transition-all duration-500"
+           data-aos="fade-left" data-aos-delay="450">
+        <div class="absolute -top-8 -right-8 w-24 h-24 border-2 border-[#cfe3ff] rounded-full opacity-20 group-hover:opacity-50 transition-all duration-500"></div>
+        <div class="flex flex-col items-center">
+          <div class="bg-[#0f1112] border-2 border-[#cfe3ff] p-5 rounded-xl mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[#cfe3ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 14.25 14.25 17M12 14.25V21" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2 text-center">Mobile App Development</h3>
+          <p class="text-gray-400 text-center leading-relaxed">
+I build cross-platform mobile apps with React Native, Flutter creating fast, reliable, and intuitive experiences for both Android and iOS users.          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why Work With Me Section - Responsive Timeline No Icons -->
+<section id="why" class="py-28 bg-[#0f1112] text-gray-200 px-6 md:px-20">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl md:text-6xl font-bold mb-20 text-center" data-aos="fade-up">
+      What <span class="text-[#cfe3ff]">Sets Me Apart</span>
+    </h2>
+
+    <div class="relative">
+      <!-- Vertical timeline line (desktop only) -->
+      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#1f2123]"></div>
+
+      <!-- Timeline Item 1 -->
+      <div class="relative mb-20 flex flex-col md:flex-row justify-between items-center w-full" data-aos="fade-right">
+        <div class="w-full md:w-5/12 text-center md:text-right md:pr-10 mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">Quality & Performance</h3>
+          <p class="text-gray-400 leading-relaxed">
+            I write clean, efficient, and scalable code ensuring every project is built for speed, reliability, and long-term success.
+          </p>
+        </div>
+        <div class="w-6 h-6 rounded-full bg-[#0f1112] border-2 border-[#cfe3ff] z-10"></div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="relative mb-20 flex flex-col md:flex-row-reverse justify-between items-center w-full" data-aos="fade-left">
+        <div class="w-full md:w-5/12 text-center md:text-left md:pl-10 mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">Clear Communication</h3>
+          <p class="text-gray-400 leading-relaxed">
+            I value transparency and collaboration, keeping you updated through every stage to ensure your vision is fully realized.
+          </p>
+        </div>
+        <div class="w-6 h-6 rounded-full bg-[#0f1112] border-2 border-[#cfe3ff] z-10"></div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="relative mb-20 flex flex-col md:flex-row justify-between items-center w-full" data-aos="fade-right">
+        <div class="w-full md:w-5/12 text-center md:text-right md:pr-10 mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">End-to-End Expertise</h3>
+          <p class="text-gray-400 leading-relaxed">
+From frontend design to blockchain integration, I handle projects with precision and deliver complete, production-ready solutions.
+          </p>
+        </div>
+        <div class="w-6 h-6 rounded-full bg-[#0f1112] border-2 border-[#cfe3ff] z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Tech Stack Section -->
+<section id="techstack" class="relative py-28 bg-[#0f1112] text-gray-200 px-6 md:px-20 overflow-hidden">
+  <!-- Glowing background -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#cfe3ff15] rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <h2 class="text-5xl md:text-6xl font-bold mb-4">
+      <span class="bg-gradient-to-r from-[#cfe3ff] to-[#cfe3ff] bg-clip-text text-transparent" data-aos="fade-up">
+        My Tech Stack
+      </span>
+    </h2>
+    <p class="text-gray-400 mb-16 max-w-2xl mx-auto" data-aos="fade-up">
+      A combination of modern tools and frameworks I use to craft fast, scalable, and visually stunning digital products.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 place-items-center">
+
+      <!-- ReactJS -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">React.js</p>
+      </div>
+
+      <!-- Node.js -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[200ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">Node.js</p>
+      </div>
+
+      <!-- Express -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[400ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="w-14 h-14 mb-2 invert group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">Express</p>
+      </div>
+
+      <!-- MongoDB -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[600ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">MongoDB</p>
+      </div>
+
+      <!-- Next.js -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[800ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-14 h-14 mb-2 invert group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">Next.js</p>
+      </div>
+
+      <!-- Solidity (white fix) -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[1000ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300 brightness-200 invert">
+        <p class="text-[#cfe3ff] font-medium">Solidity</p>
+      </div>
+
+      <!-- Web3.js -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[1200ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/web3js/web3js-original.svg" alt="Web3.js" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">Web3.js</p>
+      </div>
+
+      <!-- HTML -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[1400ms]">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">HTML</p>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="group relative w-36 h-36 bg-[#1a1d21]/80 border border-[#2c3237] rounded-2xl flex flex-col items-center justify-center transition-all hover:shadow-[0_0_25px_#6C63FF50] hover:-translate-y-2 duration-300 animate-float delay-[1600ms]">
+        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-14 h-14 mb-2 group-hover:scale-110 transition-transform duration-300">
+        <p class="text-[#cfe3ff] font-medium">Tailwind CSS</p>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 2.5s ease-in-out infinite;
+    }
+  </style>
+</section>
+
+
+
+
+<!-- Professional Experience Section -->
+<section id="experience" class="py-28 bg-[#0f1112] text-gray-200 px-6 md:px-20 relative overflow-hidden"
+         data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out">
+  
+  <!-- Decorative Gradient Blur -->
+  <div class="absolute -top-20 -right-40 w-96 h-96 bg-[#cfe3ff30] rounded-full blur-[150px]"></div>
+  <div class="absolute bottom-0 -left-40 w-96 h-96 bg-[#cfe3ff20] rounded-full blur-[150px]"></div>
+
+  <div class="max-w-6xl mx-auto text-left relative z-10">
+    <h2 class="text-5xl md:text-6xl font-bold mb-20 text-center" data-aos="fade-up" data-aos-delay="200">
+      My <span class="text-[#cfe3ff]">Professional Experience</span>
+    </h2>
+
+    <div class="relative border-l-2 border-[#cfe3ff30] pl-6 md:pl-12 space-y-14">
+      
+      <!-- Timeline Indicator -->
+      <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#cfe3ff] to-transparent opacity-40"></div>
+
+      <!-- Experience Card 1 -->
+      <div class="relative group" data-aos="fade-right" data-aos-delay="300">
+        <div class="absolute -left-[10px] top-3 w-4 h-4 bg-[#cfe3ff] rounded-full shadow-[0_0_15px_#cfe3ff80] group-hover:scale-125 transition-transform duration-300"></div>
+        <div class="bg-[#141618]/70 backdrop-blur-md border border-[#1f2123] rounded-2xl p-6 md:p-8 shadow-md hover:shadow-[0_0_35px_#cfe3ff30] hover:-translate-y-1 transition-all duration-500">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-1">Frontend Developer</h3>
+          <p class="text-gray-400 mb-2">2021 - Present</p>
+          <p class="text-gray-300 text-sm">Designed and developed modern, responsive web interfaces using React.js and Next.js.</p>
+          <ul class="mt-4 list-disc list-inside text-gray-400 leading-relaxed">
+            <li>Built pixel-perfect UI components with Tailwind CSS and JavaScript.</li>
+            <li>Integrated APIs and improved performance for enhanced UX.</li>
+            <li>Focused on reusability and clean, maintainable code.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Experience Card 2 -->
+      <div class="relative group" data-aos="fade-right" data-aos-delay="400">
+        <div class="absolute -left-[10px] top-3 w-4 h-4 bg-[#cfe3ff] rounded-full shadow-[0_0_15px_#cfe3ff80] group-hover:scale-125 transition-transform duration-300"></div>
+        <div class="bg-[#141618]/70 backdrop-blur-md border border-[#1f2123] rounded-2xl p-6 md:p-8 shadow-md hover:shadow-[0_0_35px_#cfe3ff30] hover:-translate-y-1 transition-all duration-500">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-1">Blockchain Developer</h3>
+          <p class="text-gray-400 mb-2">2023 - Present</p>
+          <p class="text-gray-300 text-sm">Developed decentralized applications and smart contracts across multiple EVM-compatible networks.</p>
+          <ul class="mt-4 list-disc list-inside text-gray-400 leading-relaxed">
+            <li>Built, deployed, and tested contracts using Solidity, Hardhat, and Truffle.</li>
+            <li>Integrated DApps with Web3.js and Ethers.js for seamless blockchain interaction.</li>
+            <li>Worked on NFT, DeFi, and DAO projects ensuring security and gas optimization.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Experience Card 3 -->
+      <div class="relative group" data-aos="fade-right" data-aos-delay="500">
+        <div class="absolute -left-[10px] top-3 w-4 h-4 bg-[#cfe3ff] rounded-full shadow-[0_0_15px_#cfe3ff80] group-hover:scale-125 transition-transform duration-300"></div>
+        <div class="bg-[#141618]/70 backdrop-blur-md border border-[#1f2123] rounded-2xl p-6 md:p-8 shadow-md hover:shadow-[0_0_35px_#cfe3ff30] hover:-translate-y-1 transition-all duration-500">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-1">Full Stack Developer</h3>
+          <p class="text-gray-400 mb-2">2022 - Present</p>
+          <p class="text-gray-300 text-sm">Combined frontend and backend development to build dynamic web platforms.</p>
+          <ul class="mt-4 list-disc list-inside text-gray-400 leading-relaxed">
+            <li>Developed scalable backends with Node.js, Express.js, and MongoDB.</li>
+            <li>Created responsive interfaces using React and Next.js.</li>
+            <li>Focused on architecture, API design, and user-centered solutions.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-28 bg-[#0f1112] text-gray-200 px-6 md:px-20 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up" data-aos-delay="300">
+    <h2 class="text-5xl md:text-6xl font-bold mb-6">
+      What <span class="text-[#cfe3ff]">Clients Say</span>
+    </h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-16">
+      Genuine feedback that reflects my passion, work ethic, and commitment to building quality digital experiences.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Testimonial Card -->
+      <div class="relative bg-[#1a1d21]/70 backdrop-blur-md border border-[#2c3237] rounded-3xl p-8 shadow-lg hover:shadow-[0_0_20px_#6C63FF30] transition">
+        <div class="flex flex-col items-center text-center">
+          <img src="https://cdn4.iconfinder.com/data/icons/business-icons-33/1024/avatar-512.png" class="w-20 h-20 rounded-full border-2 border-[#cfe3ff] shadow-md mb-4" alt="Client 1">
+          <h4 class="text-[#cfe3ff] font-semibold text-lg">Hosen Mixal</h4>
+          <p class="text-gray-400 text-sm mb-4">Owner, MixalSwap</p>
+          <p class="text-gray-300 text-[15px] leading-relaxed">
+            “Working with Johnson was one of the best decisions for our project. He’s one of the most reliable and skilled smart contract developers I’ve met, he's professional, fast, and deeply knowledgeable about blockchain architecture.”
+          </p>
+          <div class="flex text-yellow-400 mt-3">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card -->
+      <div class="relative bg-[#1a1d21]/70 backdrop-blur-md border border-[#2c3237] rounded-3xl p-8 shadow-lg hover:shadow-[0_0_20px_#6C63FF30] transition">
+        <div class="flex flex-col items-center text-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/3781/3781986.png" class="w-20 h-20 rounded-full border-2 border-[#cfe3ff] shadow-md mb-4" alt="Client 2">
+          <h4 class="text-[#cfe3ff] font-semibold text-lg">Liam Miller</h4>
+          <p class="text-gray-300 text-[15px] leading-relaxed">
+            “Johnson makes teamwork effortless. He’s calm under pressure, communicates clearly, and genuinely cares about doing things right both in code and collaboration.”
+          </p>
+          <div class="flex text-yellow-400 mt-3">★★★★★</div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card -->
+      <div class="relative bg-[#1a1d21]/70 backdrop-blur-md border border-[#2c3237] rounded-3xl p-8 shadow-lg hover:shadow-[0_0_20px_#6C63FF30] transition">
+        <div class="flex flex-col items-center text-center">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg" class="w-20 h-20 rounded-full border-2 border-[#cfe3ff] shadow-md mb-4" alt="Client 3">
+          <h4 class="text-[#cfe3ff] font-semibold text-lg">Joao Gabrial</h4>
+          <p class="text-gray-400 text-sm mb-4">Startup Founder</p>
+          <p class="text-gray-300 text-[15px] leading-relaxed">
+            “Johnson transformed our frontend from basic to beautiful. Every component looks sharp, performs flawlessly, and feels perfectly responsive across all devices.”
+          </p>
+          <div class="flex text-yellow-400 mt-3">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Subtle Glow Decoration -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#6C63FF20] rounded-full blur-3xl opacity-10 pointer-events-none"></div>
+</section>
+
+
+<!-- Include AOS CSS in <head> -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- My Projects Section -->
+<section id="projects" class="py-28 bg-[#0f1112] text-gray-200 px-6 md:px-20">
+  <div class="max-w-6xl mx-auto text-left">
+    <h2 class="text-5xl md:text-6xl font-bold mb-16">
+      My <span class="text-[#cfe3ff]">Projects</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Project 1 -->
+      <div class="project-card bg-[#141618] border border-[#1f2123] rounded-2xl overflow-hidden shadow-md hover:shadow-[0_0_25px_#cfe3ff20] transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="100">
+        <img src="Screenshot 2025-10-11 113840.png" alt="Project 1" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">ShopCo Ecommerce Theme</h3>
+          <p class="text-gray-400 mb-3">
+            A static ecommerce website theme focused on modern, clean design and responsive layouts. Built to showcase fashion products with sections for collections, categories, and brand highlights. This project demonstrates frontend design skills only no dynamic or shopping functionality.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">ReactJS</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">NodeJS</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Web3.js</span>
+          </div>
+          <a href="https://shopco-ecommerce-website.vercel.app/" target="_blank" class="inline-block bg-[#cfe3ff] text-black font-semibold px-6 py-2 rounded-lg hover:bg-[#b4d4ff] transition">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card bg-[#141618] border border-[#1f2123] rounded-2xl overflow-hidden shadow-md hover:shadow-[0_0_25px_#cfe3ff20] transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="200">
+        <img src="Screenshot 2025-10-11 111600.png" alt="Project 2" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">Shiba NFT Marketplace</h3>
+          <p class="text-gray-400 mb-3">
+            A decentralized NFT marketplace built for Shiba NFT Football Collection. It allows users to mint, buy, and sell Shiba NFTs with seamless Web3 wallet integration and real-time blockchain interaction.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Solidity</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">ReactJS</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          </div>
+          <a href="https://shiba-test-nft.netlify.app/" target="_blank" class="inline-block bg-[#cfe3ff] text-black font-semibold px-6 py-2 rounded-lg hover:bg-[#b4d4ff] transition">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card bg-[#141618] border border-[#1f2123] rounded-2xl overflow-hidden shadow-md hover:shadow-[0_0_25px_#cfe3ff20] transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="300">
+        <img src="fluidprotocol.png" alt="Project 3" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">Fluid Protocol (Testnet)</h3>
+          <p class="text-gray-400 mb-3">
+   A decentralized lending and borrowing platform inspired by Liquity, built on the Fuel Network. It enables users to mint stable assets by locking collateral, with a focus on gas efficiency, transparency, and scalability.          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">NextJS</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">MongoDB</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          </div>
+          <a href="https://testnet.fluidprotocol.io" target="_blank" class="inline-block bg-[#cfe3ff] text-black font-semibold px-6 py-2 rounded-lg hover:bg-[#b4d4ff] transition">
+            Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card bg-[#141618] border border-[#1f2123] rounded-2xl overflow-hidden shadow-md hover:shadow-[0_0_25px_#cfe3ff20] transition-all duration-300"
+           data-aos="fade-up" data-aos-delay="400">
+        <img src="Screenshot 2025-10-11 113253.png" alt="Project 4" class="w-full h-64 object-cover cursor-pointer" onclick="openModal(this.src)">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-[#cfe3ff] mb-2">Decentralized Storage Platform</h3>
+          <p class="text-gray-400 mb-3">
+            A web interface for uploading, retrieving, and managing files on decentralized storage networks (e.g. IPFS, Arweave). Enables users to securely store content off centralized servers, view metadata, and retrieve files via distributed nodes all with seamless Web3 integration.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Solidity</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">ReactJS</span>
+            <span class="bg-[#1f2123] text-[#cfe3ff] px-3 py-1 rounded-full text-sm">Web3.js</span>
+          </div>
+          <a href="https://decentralized-storage.netlify.app/" target="_blank" class="inline-block bg-[#cfe3ff] text-black font-semibold px-6 py-2 rounded-lg hover:bg-[#b4d4ff] transition">
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <span class="absolute top-5 right-8 text-white text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
+  <img id="modal-img" src="" alt="Project Image" class="max-w-3xl max-h-[80vh] object-contain rounded-xl shadow-lg">
+</div>
+
+<script>
+  function openModal(src){
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').classList.remove('hidden');
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.add('hidden');
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
   });
 </script>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-[#0f1112] text-gray-200 px-6 md:px-20"
+         data-aos="fade-up"
+         data-aos-duration="1200"
+         data-aos-easing="ease-out">
+  <div class="max-w-6xl mx-auto text-left">
+    <h2 class="text-5xl md:text-6xl font-bold mb-12" data-aos="fade-up" data-aos-delay="200">
+      Get in <span class="text-[#cfe3ff]">Touch</span>
+    </h2>
+
+    <div class="flex flex-col md:flex-row gap-12">
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/movkknwb" method="POST" class="flex-1 bg-[#141618] border border-[#1f2123] rounded-2xl p-8 shadow-md hover:shadow-[0_0_25px_#cfe3ff20] transition-all duration-300"
+      data-aos="fade-up" data-aos-delay="300">
+
+  <!-- Name -->
+  <div class="mb-4">
+    <label class="block text-gray-400 mb-2" for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg bg-[#1f2123] border border-[#1f2123] focus:outline-none focus:border-[#cfe3ff] transition"/>
+  </div>
+
+  <!-- Email -->
+  <div class="mb-4">
+    <label class="block text-gray-400 mb-2" for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-lg bg-[#1f2123] border border-[#1f2123] focus:outline-none focus:border-[#cfe3ff] transition"/>
+  </div>
+
+  <!-- Message -->
+  <div class="mb-4">
+    <label class="block text-gray-400 mb-2" for="message">Message</label>
+    <textarea name="message" id="message" rows="5" placeholder="Your Message" class="w-full px-4 py-2 rounded-lg bg-[#1f2123] border border-[#1f2123] focus:outline-none focus:border-[#cfe3ff] transition"></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="bg-[#cfe3ff] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#b4d4ff] transition">
+    Send Message
+  </button>
+
+  <!-- Optional: Disable CAPTCHA -->
+  <input type="hidden" name="_captcha" value="false"/>
+</form>
+
+
+      <!-- Social Links -->
+      <div class="flex-1 flex flex-col justify-center text-gray-400" data-aos="fade-up" data-aos-delay="400">
+        <p class="mb-4">
+          I’m available for freelance or full-time projects. Fill the form and I’ll get back to you as soon as possible.
+        </p>
+        <p class="mb-4">
+          Or reach me via social platforms below.
+        </p>
+
+        <!-- Social / Freelance Links -->
+        <div class="flex items-center gap-6 mt-4">
+          <!-- Fiverr -->
+          <a href="https://www.fiverr.com/call_me_segzy" target="_blank" class="text-[#cfe3ff] hover:text-[#b4d4ff] transition text-3xl">
+            <img src="https://static.vecteezy.com/system/resources/previews/025/732/716/non_2x/fiverr-logo-icon-online-platform-for-freelancers-free-vector.jpg" viewBox="0 0 24 24" fill="#cfe3ff" class="w-8 h-8">
+              <path d="M22.196 7.6c0-4.18-4.33-6.396-9.082-6.396-4.515 0-9.082 2.216-9.082 6.396 0 2.83 2.24 5.03 5.19 5.03.507 0 .934-.44.934-.975v-.095c0-.537-.427-.974-.934-.974-1.26 0-2.274-1.053-2.274-2.034 0-1.193 1.018-2.002 2.566-2.002 2.61 0 4.688 1.7 4.688 4.158 0 3.604-2.908 6.08-6.34 6.08-1.312 0-2.35-.418-3.083-1.013-.31-.25-.75-.157-.904.193-.146.33-.086.782.195 1.056 1.017 1.03 2.637 1.63 4.306 1.63 4.548 0 8.213-3.237 8.213-7.48v-.02z"/>
+            </svg>
+          </a>
+
+          <!-- Upwork -->
+          <a href="https://www.upwork.com/freelancers/~011487ac94716b7dca?mp_source=share" target="_blank" class="text-[#cfe3ff] hover:text-[#b4d4ff] transition text-3xl">
+            <img src="https://www.svgrepo.com/show/349549/upwork.svg" viewBox="0 0 32 32" fill="#cfe3ff" class="w-8 h-8">
+              <path d="M28.56 4.34c-1.17-1.19-2.72-1.53-4.53-1.08l-7.03 2.01v9.84l-4.95 1.42v-11.3h-5.03l-4.95 1.42v13.85l4.95-1.41v-4.85l5.03-1.44v7.32l4.95-1.42v-10.9l7.03-2.01c1.78-.45 3.2-.05 4.28 1.08.97.99 1.15 2.33.54 3.87-.37 1.06-.94 1.78-1.77 2.28l-7.8 4.52-7.53 4.36v2.8l7.53-4.36 7.8-4.52c2.44-1.42 3.74-3.48 3.74-6.16 0-1.78-.61-3.2-1.83-4.24z"/>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" class="text-[#cfe3ff] hover:text-[#b4d4ff] transition text-3xl">
+            <i class="fab fa-github w-8 h-8"></i>
+          </a>
+
+          <a href="https://www.x.com/SegzyCodes" target="_blank" class="text-[#cfe3ff] hover:text-[#b4d4ff] transition text-3xl">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/1200px-X_logo.jpg" viewBox="0 0 32 32" fill="#cfe3ff" class="w-8 h-8">
+              <path d="M28.56 4.34c-1.17-1.19-2.72-1.53-4.53-1.08l-7.03 2.01v9.84l-4.95 1.42v-11.3h-5.03l-4.95 1.42v13.85l4.95-1.41v-4.85l5.03-1.44v7.32l4.95-1.42v-10.9l7.03-2.01c1.78-.45 3.2-.05 4.28 1.08.97.99 1.15 2.33.54 3.87-.37 1.06-.94 1.78-1.77 2.28l-7.8 4.52-7.53 4.36v2.8l7.53-4.36 7.8-4.52c2.44-1.42 3.74-3.48 3.74-6.16 0-1.78-.61-3.2-1.83-4.24z"/>
+            </svg>
+          </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 text-gray-500 text-sm text-center">
+      © 2025 Built by <span class="text-[#cfe3ff]">SegzyCode</span>.
+    </div>
+  </div>
+</section>
+
+
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  const typingElement = document.getElementById("typing");
-  const roles = [
-    "Full-Stack Developer",
-    "Web & Mobile App",
-    "Blockchain / Web3"
-  ];
-
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function typeEffect() {
-    const currentText = roles[roleIndex];
-    const speed = isDeleting ? 50 : 100;
-
-    typingElement.textContent = currentText.substring(0, charIndex);
-
-    if (!isDeleting && charIndex < currentText.length) {
-      charIndex++;
-    } else if (isDeleting && charIndex > 0) {
-      charIndex--;
-    } else {
-      if (!isDeleting) {
-        isDeleting = true;
-        setTimeout(typeEffect, 1000); // Wait before deleting
-        return;
-      } else {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
-    }
-
-    setTimeout(typeEffect, speed);
-  }
-
-  document.addEventListener("DOMContentLoaded", typeEffect);
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+  AOS.init({
+    duration: 1000,       // animation duration in ms
+    easing: 'ease-out',   // easing function
+    once: false,          // false = animate every time section enters viewport
+    mirror: true,         // animate on scroll up
   });
-
 </script>
 
 </body>
 </html>
-
-
